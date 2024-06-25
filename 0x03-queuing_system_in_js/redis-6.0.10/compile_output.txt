@@ -1,0 +1,2330 @@
+cd src && make all
+make[1]: Entering directory `/root/alx-backend/0x03-queuing_system_in_js/redis-6.0.10/src'
+    [34mCC[0m [33mserver.o[0m
+In file included from server.c:30:0:
+server.h:1082:5: error: expected specifier-qualifier-list before '_Atomic'
+     _Atomic unsigned int lruclock; /* Clock for LRU eviction */
+     ^
+server.c: In function 'serverLogRaw':
+server.c:1035:31: error: 'struct redisServer' has no member named 'logfile'
+     int log_to_stdout = server.logfile[0] == '\0';
+                               ^
+server.c:1038:23: error: 'struct redisServer' has no member named 'verbosity'
+     if (level < server.verbosity) return;
+                       ^
+server.c:1040:47: error: 'struct redisServer' has no member named 'logfile'
+     fp = log_to_stdout ? stdout : fopen(server.logfile,"a");
+                                               ^
+server.c:1053:47: error: 'struct redisServer' has no member named 'timezone'
+         nolocks_localtime(&tm,tv.tv_sec,server.timezone,server.daylight_active);
+                                               ^
+server.c:1053:63: error: 'struct redisServer' has no member named 'daylight_active'
+         nolocks_localtime(&tm,tv.tv_sec,server.timezone,server.daylight_active);
+                                                               ^
+server.c:1056:19: error: 'struct redisServer' has no member named 'sentinel_mode'
+         if (server.sentinel_mode) {
+                   ^
+server.c:1061:32: error: 'struct redisServer' has no member named 'masterhost'
+             role_char = (server.masterhost ? 'S':'M'); /* Slave or Master. */
+                                ^
+server.c:1069:15: error: 'struct redisServer' has no member named 'syslog_enabled'
+     if (server.syslog_enabled) syslog(syslogLevelMap[level], "%s", msg);
+               ^
+server.c: In function 'serverLog':
+server.c:1079:30: error: 'struct redisServer' has no member named 'verbosity'
+     if ((level&0xff) < server.verbosity) return;
+                              ^
+server.c: In function 'serverLogFromHandler':
+server.c:1096:31: error: 'struct redisServer' has no member named 'logfile'
+     int log_to_stdout = server.logfile[0] == '\0';
+                               ^
+server.c:1099:30: error: 'struct redisServer' has no member named 'verbosity'
+     if ((level&0xff) < server.verbosity || (log_to_stdout && server.daemonize))
+                              ^
+server.c:1099:68: error: 'struct redisServer' has no member named 'daemonize'
+     if ((level&0xff) < server.verbosity || (log_to_stdout && server.daemonize))
+                                                                    ^
+server.c:1102:37: error: 'struct redisServer' has no member named 'logfile'
+                          open(server.logfile, O_APPEND|O_CREAT|O_WRONLY, 0644);
+                                     ^
+server.c: In function 'hasActiveChildProcess':
+server.c:1479:18: error: 'struct redisServer' has no member named 'rdb_child_pid'
+     return server.rdb_child_pid != -1 ||
+                  ^
+server.c:1480:18: error: 'struct redisServer' has no member named 'aof_child_pid'
+            server.aof_child_pid != -1 ||
+                  ^
+server.c:1481:18: error: 'struct redisServer' has no member named 'module_child_pid'
+            server.module_child_pid != -1;
+                  ^
+server.c: In function 'allPersistenceDisabled':
+server.c:1487:18: error: 'struct redisServer' has no member named 'saveparamslen'
+     return server.saveparamslen == 0 && server.aof_state == AOF_OFF;
+                  ^
+server.c:1487:47: error: 'struct redisServer' has no member named 'aof_state'
+     return server.saveparamslen == 0 && server.aof_state == AOF_OFF;
+                                               ^
+server.c: In function 'trackInstantaneousMetric':
+server.c:1494:36: error: 'struct redisServer' has no member named 'inst_metric'
+     long long t = mstime() - server.inst_metric[metric].last_sample_time;
+                                    ^
+server.c:1496:27: error: 'struct redisServer' has no member named 'inst_metric'
+                     server.inst_metric[metric].last_sample_count;
+                           ^
+server.c:1501:11: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].samples[server.inst_metric[metric].idx] =
+           ^
+server.c:1501:46: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].samples[server.inst_metric[metric].idx] =
+                                              ^
+server.c:1503:11: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].idx++;
+           ^
+server.c:1504:11: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].idx %= STATS_METRIC_SAMPLES;
+           ^
+server.c:1505:11: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].last_sample_time = mstime();
+           ^
+server.c:1506:11: error: 'struct redisServer' has no member named 'inst_metric'
+     server.inst_metric[metric].last_sample_count = current_reading;
+           ^
+server.c:1493:35: warning: parameter 'metric' set but not used [-Wunused-but-set-parameter]
+ void trackInstantaneousMetric(int metric, long long current_reading) {
+                                   ^
+server.c: In function 'getInstantaneousMetric':
+server.c:1515:22: error: 'struct redisServer' has no member named 'inst_metric'
+         sum += server.inst_metric[metric].samples[j];
+                      ^
+server.c:1510:38: warning: parameter 'metric' set but not used [-Wunused-but-set-parameter]
+ long long getInstantaneousMetric(int metric) {
+                                      ^
+server.c: In function 'clientsCronResizeQueryBuffer':
+server.c:1525:29: error: 'struct redisServer' has no member named 'unixtime'
+     time_t idletime = server.unixtime - c->lastinteraction;
+                             ^
+server.c: In function 'clientsCronTrackExpansiveClients':
+server.c:1582:19: error: 'struct redisServer' has no member named 'unixtime'
+     int i = server.unixtime % CLIENTS_PEAK_MEM_USAGE_SLOTS;
+                   ^
+server.c: In function 'clientsCronTrackClientsMemUsage':
+server.c:1621:11: error: 'struct redisServer' has no member named 'stat_clients_type_memory'
+     server.stat_clients_type_memory[c->client_cron_last_memory_type] -=
+           ^
+server.c:1623:11: error: 'struct redisServer' has no member named 'stat_clients_type_memory'
+     server.stat_clients_type_memory[type] += mem;
+           ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c: In function 'clientsCron':
+server.c:1663:39: error: 'struct redisServer' has no member named 'clients'
+     int numclients = listLength(server.clients);
+                                       ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:1674:28: error: 'struct redisServer' has no member named 'clients'
+     while(listLength(server.clients) && iterations--) {
+                            ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:1681:36: error: 'struct redisServer' has no member named 'clients'
+         listRotateTailToHead(server.clients);
+                                    ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:1682:32: error: 'struct redisServer' has no member named 'clients'
+         head = listFirst(server.clients);
+                                ^
+adlist.h:58:24: note: in definition of macro 'listFirst'
+ #define listFirst(l) ((l)->head)
+                        ^
+server.c: In function 'databasesCron':
+server.c:1700:15: error: 'struct redisServer' has no member named 'active_expire_enabled'
+     if (server.active_expire_enabled) {
+               ^
+server.c:1724:34: error: 'struct redisServer' has no member named 'dbnum'
+         if (dbs_per_call > server.dbnum) dbs_per_call = server.dbnum;
+                                  ^
+server.c:1724:63: error: 'struct redisServer' has no member named 'dbnum'
+         if (dbs_per_call > server.dbnum) dbs_per_call = server.dbnum;
+                                                               ^
+server.c:1728:51: error: 'struct redisServer' has no member named 'dbnum'
+             tryResizeHashTables(resize_db % server.dbnum);
+                                                   ^
+server.c:1733:19: error: 'struct redisServer' has no member named 'activerehashing'
+         if (server.activerehashing) {
+                   ^
+server.c:1743:40: error: 'struct redisServer' has no member named 'dbnum'
+                     rehash_db %= server.dbnum;
+                                        ^
+server.c: In function 'updateCachedTime':
+server.c:1761:11: error: 'struct redisServer' has no member named 'ustime'
+     server.ustime = ustime();
+           ^
+server.c:1762:11: error: 'struct redisServer' has no member named 'mstime'
+     server.mstime = server.ustime / 1000;
+           ^
+server.c:1762:27: error: 'struct redisServer' has no member named 'ustime'
+     server.mstime = server.ustime / 1000;
+                           ^
+server.c:1763:11: error: 'struct redisServer' has no member named 'unixtime'
+     server.unixtime = server.mstime / 1000;
+           ^
+server.c:1763:29: error: 'struct redisServer' has no member named 'mstime'
+     server.unixtime = server.mstime / 1000;
+                             ^
+server.c:1772:27: error: 'struct redisServer' has no member named 'unixtime'
+         time_t ut = server.unixtime;
+                           ^
+server.c:1774:15: error: 'struct redisServer' has no member named 'daylight_active'
+         server.daylight_active = tm.tm_isdst;
+               ^
+server.c: In function 'checkChildrenDone':
+server.c:1787:15: error: 'struct redisServer' has no member named 'rdb_child_pid'
+     if (server.rdb_child_pid != -1 && server.rdb_pipe_conns)
+               ^
+server.c:1787:45: error: 'struct redisServer' has no member named 'rdb_pipe_conns'
+     if (server.rdb_child_pid != -1 && server.rdb_pipe_conns)
+                                             ^
+server.c:1810:29: error: 'struct redisServer' has no member named 'rdb_child_pid'
+                 (int) server.rdb_child_pid,
+                             ^
+server.c:1811:29: error: 'struct redisServer' has no member named 'aof_child_pid'
+                 (int) server.aof_child_pid,
+                             ^
+server.c:1812:29: error: 'struct redisServer' has no member named 'module_child_pid'
+                 (int) server.module_child_pid);
+                             ^
+server.c:1813:33: error: 'struct redisServer' has no member named 'rdb_child_pid'
+         } else if (pid == server.rdb_child_pid) {
+                                 ^
+server.c:1816:33: error: 'struct redisServer' has no member named 'aof_child_pid'
+         } else if (pid == server.aof_child_pid) {
+                                 ^
+server.c:1819:33: error: 'struct redisServer' has no member named 'module_child_pid'
+         } else if (pid == server.module_child_pid) {
+                                 ^
+server.c: In function 'serverCron':
+server.c:1861:15: error: 'struct redisServer' has no member named 'watchdog_period'
+     if (server.watchdog_period) watchdogScheduleSignal(server.watchdog_period);
+               ^
+server.c:1861:62: error: 'struct redisServer' has no member named 'watchdog_period'
+     if (server.watchdog_period) watchdogScheduleSignal(server.watchdog_period);
+                                                              ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:1870:33: error: 'struct redisServer' has no member named 'clients'
+         while (listLength(server.clients) / server.hz >
+                                 ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:1881:5: note: in expansion of macro 'run_with_period'
+     run_with_period(100) {
+     ^
+server.c:1882:61: error: 'struct redisServer' has no member named 'stat_numcommands'
+         trackInstantaneousMetric(STATS_METRIC_COMMAND,server.stat_numcommands);
+                                                             ^
+server.c:1884:23: error: 'struct redisServer' has no member named 'stat_net_input_bytes'
+                 server.stat_net_input_bytes);
+                       ^
+server.c:1886:23: error: 'struct redisServer' has no member named 'stat_net_output_bytes'
+                 server.stat_net_output_bytes);
+                       ^
+server.c:1900:11: error: 'struct redisServer' has no member named 'lruclock'
+     server.lruclock = getLRUClock();
+           ^
+server.c:1903:39: error: 'struct redisServer' has no member named 'stat_peak_memory'
+     if (zmalloc_used_memory() > server.stat_peak_memory)
+                                       ^
+server.c:1904:15: error: 'struct redisServer' has no member named 'stat_peak_memory'
+         server.stat_peak_memory = zmalloc_used_memory();
+               ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:1906:5: note: in expansion of macro 'run_with_period'
+     run_with_period(100) {
+     ^
+server.c:1910:15: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         server.cron_malloc_stats.process_rss = zmalloc_get_rss();
+               ^
+server.c:1911:15: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         server.cron_malloc_stats.zmalloc_used = zmalloc_used_memory();
+               ^
+server.c:1916:43: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         zmalloc_get_allocator_info(&server.cron_malloc_stats.allocator_allocated,
+                                           ^
+server.c:1917:43: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+                                    &server.cron_malloc_stats.allocator_active,
+                                           ^
+server.c:1918:43: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+                                    &server.cron_malloc_stats.allocator_resident);
+                                           ^
+server.c:1921:20: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         if (!server.cron_malloc_stats.allocator_resident) {
+                    ^
+server.c:1925:46: error: 'struct redisServer' has no member named 'lua'
+             size_t lua_memory = lua_gc(server.lua,LUA_GCCOUNT,0)*1024LL;
+                                              ^
+server.c:1926:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_resident = server.cron_malloc_stats.process_rss - lua_memory;
+                   ^
+server.c:1926:65: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_resident = server.cron_malloc_stats.process_rss - lua_memory;
+                                                                 ^
+server.c:1928:20: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         if (!server.cron_malloc_stats.allocator_active)
+                    ^
+server.c:1929:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_active = server.cron_malloc_stats.allocator_resident;
+                   ^
+server.c:1929:63: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_active = server.cron_malloc_stats.allocator_resident;
+                                                               ^
+server.c:1930:20: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         if (!server.cron_malloc_stats.allocator_allocated)
+                    ^
+server.c:1931:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_allocated = server.cron_malloc_stats.zmalloc_used;
+                   ^
+server.c:1931:66: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_allocated = server.cron_malloc_stats.zmalloc_used;
+                                                                  ^
+server.c:1936:15: error: 'struct redisServer' has no member named 'shutdown_asap'
+     if (server.shutdown_asap) {
+               ^
+server.c:1939:15: error: 'struct redisServer' has no member named 'shutdown_asap'
+         server.shutdown_asap = 0;
+               ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:1943:5: note: in expansion of macro 'run_with_period'
+     run_with_period(5000) {
+     ^
+server.c:1944:31: error: 'struct redisServer' has no member named 'dbnum'
+         for (j = 0; j < server.dbnum; j++) {
+                               ^
+server.c:1958:16: error: 'struct redisServer' has no member named 'sentinel_mode'
+     if (!server.sentinel_mode) {
+                ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:1959:9: note: in expansion of macro 'run_with_period'
+         run_with_period(5000) {
+         ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:1962:34: error: 'struct redisServer' has no member named 'clients'
+                 listLength(server.clients)-listLength(server.slaves),
+                                  ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:1962:61: error: 'struct redisServer' has no member named 'slaves'
+                 listLength(server.clients)-listLength(server.slaves),
+                                                             ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:1963:34: error: 'struct redisServer' has no member named 'slaves'
+                 listLength(server.slaves),
+                                  ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:1977:15: error: 'struct redisServer' has no member named 'aof_rewrite_scheduled'
+         server.aof_rewrite_scheduled)
+               ^
+server.c:1989:31: error: 'struct redisServer' has no member named 'saveparamslen'
+         for (j = 0; j < server.saveparamslen; j++) {
+                               ^
+server.c:1990:42: error: 'struct redisServer' has no member named 'saveparams'
+             struct saveparam *sp = server.saveparams+j;
+                                          ^
+server.c:1996:23: error: 'struct redisServer' has no member named 'dirty'
+             if (server.dirty >= sp->changes &&
+                       ^
+server.c:1997:23: error: 'struct redisServer' has no member named 'unixtime'
+                 server.unixtime-server.lastsave > sp->seconds &&
+                       ^
+server.c:1997:39: error: 'struct redisServer' has no member named 'lastsave'
+                 server.unixtime-server.lastsave > sp->seconds &&
+                                       ^
+server.c:1998:24: error: 'struct redisServer' has no member named 'unixtime'
+                 (server.unixtime-server.lastbgsave_try >
+                        ^
+server.c:1998:40: error: 'struct redisServer' has no member named 'lastbgsave_try'
+                 (server.unixtime-server.lastbgsave_try >
+                                        ^
+server.c:2000:24: error: 'struct redisServer' has no member named 'lastbgsave_status'
+                  server.lastbgsave_status == C_OK))
+                        ^
+server.c:2006:41: error: 'struct redisServer' has no member named 'rdb_filename'
+                 rdbSaveBackground(server.rdb_filename,rsiptr);
+                                         ^
+server.c:2012:19: error: 'struct redisServer' has no member named 'aof_state'
+         if (server.aof_state == AOF_ON &&
+                   ^
+server.c:2014:19: error: 'struct redisServer' has no member named 'aof_rewrite_perc'
+             server.aof_rewrite_perc &&
+                   ^
+server.c:2015:19: error: 'struct redisServer' has no member named 'aof_current_size'
+             server.aof_current_size > server.aof_rewrite_min_size)
+                   ^
+server.c:2015:45: error: 'struct redisServer' has no member named 'aof_rewrite_min_size'
+             server.aof_current_size > server.aof_rewrite_min_size)
+                                             ^
+server.c:2017:36: error: 'struct redisServer' has no member named 'aof_rewrite_base_size'
+             long long base = server.aof_rewrite_base_size ?
+                                    ^
+server.c:2018:23: error: 'struct redisServer' has no member named 'aof_rewrite_base_size'
+                 server.aof_rewrite_base_size : 1;
+                       ^
+server.c:2019:39: error: 'struct redisServer' has no member named 'aof_current_size'
+             long long growth = (server.aof_current_size*100/base) - 100;
+                                       ^
+server.c:2020:33: error: 'struct redisServer' has no member named 'aof_rewrite_perc'
+             if (growth >= server.aof_rewrite_perc) {
+                                 ^
+server.c:2033:15: error: 'struct redisServer' has no member named 'aof_flush_postponed_start'
+     if (server.aof_flush_postponed_start) flushAppendOnlyFile(0);
+               ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:2039:5: note: in expansion of macro 'run_with_period'
+     run_with_period(1000) {
+     ^
+server.c:2040:19: error: 'struct redisServer' has no member named 'aof_last_write_status'
+         if (server.aof_last_write_status == C_ERR)
+                   ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:2049:5: note: in expansion of macro 'run_with_period'
+     run_with_period(1000) replicationCron();
+     ^
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:2052:5: note: in expansion of macro 'run_with_period'
+     run_with_period(100) {
+     ^
+server.c:2053:19: error: 'struct redisServer' has no member named 'cluster_enabled'
+         if (server.cluster_enabled) clusterCron();
+                   ^
+server.c:2057:15: error: 'struct redisServer' has no member named 'sentinel_mode'
+     if (server.sentinel_mode) sentinelTimer();
+               ^
+In file included from server.c:30:0:
+server.h:458:71: error: 'struct redisServer' has no member named 'cronloops'
+ #define run_with_period(_ms_) if ((_ms_ <= 1000/server.hz) || !(server.cronloops%((_ms_)/(1000/server.hz))))
+                                                                       ^
+server.c:2060:5: note: in expansion of macro 'run_with_period'
+     run_with_period(1000) {
+     ^
+server.c:2071:15: error: 'struct redisServer' has no member named 'tracking_clients'
+     if (server.tracking_clients) trackingLimitUsedSlots();
+               ^
+server.c:2081:15: error: 'struct redisServer' has no member named 'rdb_bgsave_scheduled'
+         server.rdb_bgsave_scheduled &&
+               ^
+server.c:2082:16: error: 'struct redisServer' has no member named 'unixtime'
+         (server.unixtime-server.lastbgsave_try > CONFIG_BGSAVE_RETRY_DELAY ||
+                ^
+server.c:2082:32: error: 'struct redisServer' has no member named 'lastbgsave_try'
+         (server.unixtime-server.lastbgsave_try > CONFIG_BGSAVE_RETRY_DELAY ||
+                                ^
+server.c:2083:16: error: 'struct redisServer' has no member named 'lastbgsave_status'
+          server.lastbgsave_status == C_OK))
+                ^
+server.c:2087:37: error: 'struct redisServer' has no member named 'rdb_filename'
+         if (rdbSaveBackground(server.rdb_filename,rsiptr) == C_OK)
+                                     ^
+server.c:2088:19: error: 'struct redisServer' has no member named 'rdb_bgsave_scheduled'
+             server.rdb_bgsave_scheduled = 0;
+                   ^
+server.c:2097:11: error: 'struct redisServer' has no member named 'cronloops'
+     server.cronloops++;
+           ^
+server.c: In function 'beforeSleep':
+server.c:2121:30: error: 'struct redisServer' has no member named 'stat_peak_memory'
+     if (zmalloc_used > server.stat_peak_memory)
+                              ^
+server.c:2122:15: error: 'struct redisServer' has no member named 'stat_peak_memory'
+         server.stat_peak_memory = zmalloc_used;
+               ^
+server.c:2135:15: error: 'struct redisServer' has no member named 'events_processed_while_blocked'
+         server.events_processed_while_blocked += processed;
+               ^
+server.c:2155:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled) clusterBeforeSleep();
+               ^
+server.c:2159:15: error: 'struct redisServer' has no member named 'active_expire_enabled'
+     if (server.active_expire_enabled && server.masterhost == NULL)
+               ^
+server.c:2159:47: error: 'struct redisServer' has no member named 'masterhost'
+     if (server.active_expire_enabled && server.masterhost == NULL)
+                                               ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:2164:26: error: 'struct redisServer' has no member named 'clients_waiting_acks'
+     if (listLength(server.clients_waiting_acks))
+                          ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:2172:26: error: 'struct redisServer' has no member named 'unblocked_clients'
+     if (listLength(server.unblocked_clients))
+                          ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:2180:15: error: 'struct redisServer' has no member named 'get_ack_from_slaves'
+     if (server.get_ack_from_slaves) {
+               ^
+server.c:2186:37: error: 'struct redisServer' has no member named 'slaves'
+         replicationFeedSlaves(server.slaves, server.slaveseldb, argv, 3);
+                                     ^
+server.c:2186:52: error: 'struct redisServer' has no member named 'slaveseldb'
+         replicationFeedSlaves(server.slaves, server.slaveseldb, argv, 3);
+                                                    ^
+server.c:2190:15: error: 'struct redisServer' has no member named 'get_ack_from_slaves'
+         server.get_ack_from_slaves = 0;
+               ^
+server.c: In function 'initServerConfig':
+server.c:2354:29: error: 'struct redisServer' has no member named 'runid'
+     getRandomHexChars(server.runid,CONFIG_RUN_ID_SIZE);
+                             ^
+server.c:2355:11: error: 'struct redisServer' has no member named 'runid'
+     server.runid[CONFIG_RUN_ID_SIZE] = '\0';
+           ^
+server.c:2362:11: error: 'struct redisServer' has no member named 'timezone'
+     server.timezone = getTimeZone(); /* Initialized by tzset(). */
+           ^
+server.c:2365:11: error: 'struct redisServer' has no member named 'arch_bits'
+     server.arch_bits = (sizeof(long) == 8) ? 64 : 32;
+           ^
+server.c:2366:11: error: 'struct redisServer' has no member named 'bindaddr_count'
+     server.bindaddr_count = 0;
+           ^
+server.c:2367:11: error: 'struct redisServer' has no member named 'unixsocketperm'
+     server.unixsocketperm = CONFIG_DEFAULT_UNIX_SOCKET_PERM;
+           ^
+server.c:2368:11: error: 'struct redisServer' has no member named 'ipfd_count'
+     server.ipfd_count = 0;
+           ^
+server.c:2369:11: error: 'struct redisServer' has no member named 'tlsfd_count'
+     server.tlsfd_count = 0;
+           ^
+server.c:2370:11: error: 'struct redisServer' has no member named 'sofd'
+     server.sofd = -1;
+           ^
+server.c:2371:11: error: 'struct redisServer' has no member named 'active_expire_enabled'
+     server.active_expire_enabled = 1;
+           ^
+server.c:2372:11: error: 'struct redisServer' has no member named 'client_max_querybuf_len'
+     server.client_max_querybuf_len = PROTO_MAX_QUERYBUF_LEN;
+           ^
+server.c:2373:11: error: 'struct redisServer' has no member named 'saveparams'
+     server.saveparams = NULL;
+           ^
+server.c:2374:11: error: 'struct redisServer' has no member named 'loading'
+     server.loading = 0;
+           ^
+server.c:2375:11: error: 'struct redisServer' has no member named 'logfile'
+     server.logfile = zstrdup(CONFIG_DEFAULT_LOGFILE);
+           ^
+server.c:2376:11: error: 'struct redisServer' has no member named 'aof_state'
+     server.aof_state = AOF_OFF;
+           ^
+server.c:2377:11: error: 'struct redisServer' has no member named 'aof_rewrite_base_size'
+     server.aof_rewrite_base_size = 0;
+           ^
+server.c:2378:11: error: 'struct redisServer' has no member named 'aof_rewrite_scheduled'
+     server.aof_rewrite_scheduled = 0;
+           ^
+server.c:2379:11: error: 'struct redisServer' has no member named 'aof_flush_sleep'
+     server.aof_flush_sleep = 0;
+           ^
+server.c:2380:11: error: 'struct redisServer' has no member named 'aof_last_fsync'
+     server.aof_last_fsync = time(NULL);
+           ^
+server.c:2381:11: error: 'struct redisServer' has no member named 'aof_rewrite_time_last'
+     server.aof_rewrite_time_last = -1;
+           ^
+server.c:2382:11: error: 'struct redisServer' has no member named 'aof_rewrite_time_start'
+     server.aof_rewrite_time_start = -1;
+           ^
+server.c:2383:11: error: 'struct redisServer' has no member named 'aof_lastbgrewrite_status'
+     server.aof_lastbgrewrite_status = C_OK;
+           ^
+server.c:2384:11: error: 'struct redisServer' has no member named 'aof_delayed_fsync'
+     server.aof_delayed_fsync = 0;
+           ^
+server.c:2385:11: error: 'struct redisServer' has no member named 'aof_fd'
+     server.aof_fd = -1;
+           ^
+server.c:2386:11: error: 'struct redisServer' has no member named 'aof_selected_db'
+     server.aof_selected_db = -1; /* Make sure the first time will not match */
+           ^
+server.c:2387:11: error: 'struct redisServer' has no member named 'aof_flush_postponed_start'
+     server.aof_flush_postponed_start = 0;
+           ^
+server.c:2388:11: error: 'struct redisServer' has no member named 'pidfile'
+     server.pidfile = NULL;
+           ^
+server.c:2389:11: error: 'struct redisServer' has no member named 'active_defrag_running'
+     server.active_defrag_running = 0;
+           ^
+server.c:2390:11: error: 'struct redisServer' has no member named 'notify_keyspace_events'
+     server.notify_keyspace_events = 0;
+           ^
+server.c:2391:11: error: 'struct redisServer' has no member named 'blocked_clients'
+     server.blocked_clients = 0;
+           ^
+server.c:2392:18: error: 'struct redisServer' has no member named 'blocked_clients_by_type'
+     memset(server.blocked_clients_by_type,0,
+                  ^
+server.c:2393:25: error: 'struct redisServer' has no member named 'blocked_clients_by_type'
+            sizeof(server.blocked_clients_by_type));
+                         ^
+server.c:2394:11: error: 'struct redisServer' has no member named 'shutdown_asap'
+     server.shutdown_asap = 0;
+           ^
+server.c:2395:11: error: 'struct redisServer' has no member named 'cluster_configfile'
+     server.cluster_configfile = zstrdup(CONFIG_DEFAULT_CLUSTER_CONFIG_FILE);
+           ^
+server.c:2396:11: error: 'struct redisServer' has no member named 'cluster_module_flags'
+     server.cluster_module_flags = CLUSTER_MODULE_FLAG_NONE;
+           ^
+server.c:2397:11: error: 'struct redisServer' has no member named 'migrate_cached_sockets'
+     server.migrate_cached_sockets = dictCreate(&migrateCacheDictType,NULL);
+           ^
+server.c:2398:11: error: 'struct redisServer' has no member named 'next_client_id'
+     server.next_client_id = 1; /* Client IDs, start from 1 .*/
+           ^
+server.c:2399:11: error: 'struct redisServer' has no member named 'loading_process_events_interval_bytes'
+     server.loading_process_events_interval_bytes = (1024*1024*2);
+           ^
+server.c:2401:11: error: 'struct redisServer' has no member named 'lruclock'
+     server.lruclock = getLRUClock();
+           ^
+server.c:2409:11: error: 'struct redisServer' has no member named 'masterauth'
+     server.masterauth = NULL;
+           ^
+server.c:2410:11: error: 'struct redisServer' has no member named 'masterhost'
+     server.masterhost = NULL;
+           ^
+server.c:2411:11: error: 'struct redisServer' has no member named 'masterport'
+     server.masterport = 6379;
+           ^
+server.c:2412:11: error: 'struct redisServer' has no member named 'master'
+     server.master = NULL;
+           ^
+server.c:2413:11: error: 'struct redisServer' has no member named 'cached_master'
+     server.cached_master = NULL;
+           ^
+server.c:2414:11: error: 'struct redisServer' has no member named 'master_initial_offset'
+     server.master_initial_offset = -1;
+           ^
+server.c:2415:11: error: 'struct redisServer' has no member named 'repl_state'
+     server.repl_state = REPL_STATE_NONE;
+           ^
+server.c:2416:11: error: 'struct redisServer' has no member named 'repl_transfer_tmpfile'
+     server.repl_transfer_tmpfile = NULL;
+           ^
+server.c:2417:11: error: 'struct redisServer' has no member named 'repl_transfer_fd'
+     server.repl_transfer_fd = -1;
+           ^
+server.c:2418:11: error: 'struct redisServer' has no member named 'repl_transfer_s'
+     server.repl_transfer_s = NULL;
+           ^
+server.c:2419:11: error: 'struct redisServer' has no member named 'repl_syncio_timeout'
+     server.repl_syncio_timeout = CONFIG_REPL_SYNCIO_TIMEOUT;
+           ^
+server.c:2420:11: error: 'struct redisServer' has no member named 'repl_down_since'
+     server.repl_down_since = 0; /* Never connected, repl is down since EVER. */
+           ^
+server.c:2421:11: error: 'struct redisServer' has no member named 'master_repl_offset'
+     server.master_repl_offset = 0;
+           ^
+server.c:2424:11: error: 'struct redisServer' has no member named 'repl_backlog'
+     server.repl_backlog = NULL;
+           ^
+server.c:2425:11: error: 'struct redisServer' has no member named 'repl_backlog_histlen'
+     server.repl_backlog_histlen = 0;
+           ^
+server.c:2426:11: error: 'struct redisServer' has no member named 'repl_backlog_idx'
+     server.repl_backlog_idx = 0;
+           ^
+server.c:2427:11: error: 'struct redisServer' has no member named 'repl_backlog_off'
+     server.repl_backlog_off = 0;
+           ^
+server.c:2428:11: error: 'struct redisServer' has no member named 'repl_no_slaves_since'
+     server.repl_no_slaves_since = time(NULL);
+           ^
+server.c:2432:15: error: 'struct redisServer' has no member named 'client_obuf_limits'
+         server.client_obuf_limits[j] = clientBufferLimitsDefaults[j];
+               ^
+server.c:2436:15: error: 'struct redisServer' has no member named 'oom_score_adj_values'
+         server.oom_score_adj_values[j] = configOOMScoreAdjValuesDefaults[j];
+               ^
+server.c:2450:11: error: 'struct redisServer' has no member named 'delCommand'
+     server.delCommand = lookupCommandByCString("del");
+           ^
+server.c:2451:11: error: 'struct redisServer' has no member named 'multiCommand'
+     server.multiCommand = lookupCommandByCString("multi");
+           ^
+server.c:2452:11: error: 'struct redisServer' has no member named 'lpushCommand'
+     server.lpushCommand = lookupCommandByCString("lpush");
+           ^
+server.c:2453:11: error: 'struct redisServer' has no member named 'lpopCommand'
+     server.lpopCommand = lookupCommandByCString("lpop");
+           ^
+server.c:2454:11: error: 'struct redisServer' has no member named 'rpopCommand'
+     server.rpopCommand = lookupCommandByCString("rpop");
+           ^
+server.c:2455:11: error: 'struct redisServer' has no member named 'zpopminCommand'
+     server.zpopminCommand = lookupCommandByCString("zpopmin");
+           ^
+server.c:2456:11: error: 'struct redisServer' has no member named 'zpopmaxCommand'
+     server.zpopmaxCommand = lookupCommandByCString("zpopmax");
+           ^
+server.c:2457:11: error: 'struct redisServer' has no member named 'sremCommand'
+     server.sremCommand = lookupCommandByCString("srem");
+           ^
+server.c:2458:11: error: 'struct redisServer' has no member named 'execCommand'
+     server.execCommand = lookupCommandByCString("exec");
+           ^
+server.c:2459:11: error: 'struct redisServer' has no member named 'expireCommand'
+     server.expireCommand = lookupCommandByCString("expire");
+           ^
+server.c:2460:11: error: 'struct redisServer' has no member named 'pexpireCommand'
+     server.pexpireCommand = lookupCommandByCString("pexpire");
+           ^
+server.c:2461:11: error: 'struct redisServer' has no member named 'xclaimCommand'
+     server.xclaimCommand = lookupCommandByCString("xclaim");
+           ^
+server.c:2462:11: error: 'struct redisServer' has no member named 'xgroupCommand'
+     server.xgroupCommand = lookupCommandByCString("xgroup");
+           ^
+server.c:2463:11: error: 'struct redisServer' has no member named 'rpoplpushCommand'
+     server.rpoplpushCommand = lookupCommandByCString("rpoplpush");
+           ^
+server.c:2466:11: error: 'struct redisServer' has no member named 'assert_failed'
+     server.assert_failed = "<no assertion failed>";
+           ^
+server.c:2467:11: error: 'struct redisServer' has no member named 'assert_file'
+     server.assert_file = "<no file>";
+           ^
+server.c:2468:11: error: 'struct redisServer' has no member named 'assert_line'
+     server.assert_line = 0;
+           ^
+server.c:2469:11: error: 'struct redisServer' has no member named 'bug_report_start'
+     server.bug_report_start = 0;
+           ^
+server.c:2470:11: error: 'struct redisServer' has no member named 'watchdog_period'
+     server.watchdog_period = 0;
+           ^
+server.c:2476:11: error: 'struct redisServer' has no member named 'lua_always_replicate_commands'
+     server.lua_always_replicate_commands = 1;
+           ^
+server.c: In function 'restartServer':
+server.c:2529:32: error: 'struct redisServer' has no member named 'maxclients'
+     for (j = 3; j < (int)server.maxclients + 1024; j++) {
+                                ^
+server.c: In function 'readOOMScoreAdj':
+server.c:2554:15: error: 'struct redisServer' has no member named 'oom_score_adj_base'
+         server.oom_score_adj_base = atoi(buf);
+               ^
+server.c: In function 'setOOMScoreAdj':
+server.c:2568:15: error: 'struct redisServer' has no member named 'oom_score_adj'
+     if (server.oom_score_adj == OOM_SCORE_ADJ_NO) return C_OK;
+               ^
+server.c:2570:32: error: 'struct redisServer' has no member named 'masterhost'
+         process_class = (server.masterhost ? CONFIG_OOM_REPLICA : CONFIG_OOM_MASTER);
+                                ^
+server.c:2579:17: error: 'struct redisServer' has no member named 'oom_score_adj_values'
+     val = server.oom_score_adj_values[process_class];
+                 ^
+server.c:2580:15: error: 'struct redisServer' has no member named 'oom_score_adj'
+     if (server.oom_score_adj == OOM_SCORE_RELATIVE)
+               ^
+server.c:2581:22: error: 'struct redisServer' has no member named 'oom_score_adj_base'
+         val += server.oom_score_adj_base;
+                      ^
+server.c: In function 'adjustOpenFilesLimit':
+server.c:2611:29: error: 'struct redisServer' has no member named 'maxclients'
+     rlim_t maxfiles = server.maxclients+CONFIG_MIN_RESERVED_FDS;
+                             ^
+server.c:2617:15: error: 'struct redisServer' has no member named 'maxclients'
+         server.maxclients = 1024-CONFIG_MIN_RESERVED_FDS;
+               ^
+server.c:2649:53: error: 'struct redisServer' has no member named 'maxclients'
+                 unsigned int old_maxclients = server.maxclients;
+                                                     ^
+server.c:2650:23: error: 'struct redisServer' has no member named 'maxclients'
+                 server.maxclients = bestlimit-CONFIG_MIN_RESERVED_FDS;
+                       ^
+server.c:2674:59: error: 'struct redisServer' has no member named 'maxclients'
+                     (unsigned long long) bestlimit, server.maxclients);
+                                                           ^
+server.c: In function 'checkTcpBacklogSettings':
+server.c:2694:48: error: 'struct redisServer' has no member named 'tcp_backlog'
+         if (somaxconn > 0 && somaxconn < server.tcp_backlog) {
+                                                ^
+server.c:2695:171: error: 'struct redisServer' has no member named 'tcp_backlog'
+             serverLog(LL_WARNING,"WARNING: The TCP backlog setting of %d cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of %d.", server.tcp_backlog, somaxconn);
+                                                                                                                                                                           ^
+server.c: In function 'listenToPort':
+server.c:2725:15: error: 'struct redisServer' has no member named 'bindaddr_count'
+     if (server.bindaddr_count == 0) server.bindaddr[0] = NULL;
+               ^
+server.c:2725:43: error: 'struct redisServer' has no member named 'bindaddr'
+     if (server.bindaddr_count == 0) server.bindaddr[0] = NULL;
+                                           ^
+server.c:2726:27: error: 'struct redisServer' has no member named 'bindaddr_count'
+     for (j = 0; j < server.bindaddr_count || j == 0; j++) {
+                           ^
+server.c:2727:19: error: 'struct redisServer' has no member named 'bindaddr'
+         if (server.bindaddr[j] == NULL) {
+                   ^
+server.c:2731:48: error: 'struct redisServer' has no member named 'neterr'
+             fds[*count] = anetTcp6Server(server.neterr,port,NULL,
+                                                ^
+server.c:2732:23: error: 'struct redisServer' has no member named 'tcp_backlog'
+                 server.tcp_backlog);
+                       ^
+server.c:2743:51: error: 'struct redisServer' has no member named 'neterr'
+                 fds[*count] = anetTcpServer(server.neterr,port,NULL,
+                                                   ^
+server.c:2744:27: error: 'struct redisServer' has no member named 'tcp_backlog'
+                     server.tcp_backlog);
+                           ^
+In file included from /usr/include/string.h:635:0,
+                 from server.h:40,
+                 from server.c:30:
+server.c:2757:33: error: 'struct redisServer' has no member named 'bindaddr'
+         } else if (strchr(server.bindaddr[j],':')) {
+                                 ^
+server.c:2757:33: error: 'struct redisServer' has no member named 'bindaddr'
+         } else if (strchr(server.bindaddr[j],':')) {
+                                 ^
+server.c:2757:33: error: 'struct redisServer' has no member named 'bindaddr'
+         } else if (strchr(server.bindaddr[j],':')) {
+                                 ^
+server.c:2759:48: error: 'struct redisServer' has no member named 'neterr'
+             fds[*count] = anetTcp6Server(server.neterr,port,server.bindaddr[j],
+                                                ^
+server.c:2759:67: error: 'struct redisServer' has no member named 'bindaddr'
+             fds[*count] = anetTcp6Server(server.neterr,port,server.bindaddr[j],
+                                                                   ^
+server.c:2760:23: error: 'struct redisServer' has no member named 'tcp_backlog'
+                 server.tcp_backlog);
+                       ^
+server.c:2763:47: error: 'struct redisServer' has no member named 'neterr'
+             fds[*count] = anetTcpServer(server.neterr,port,server.bindaddr[j],
+                                               ^
+server.c:2763:66: error: 'struct redisServer' has no member named 'bindaddr'
+             fds[*count] = anetTcpServer(server.neterr,port,server.bindaddr[j],
+                                                                  ^
+server.c:2764:23: error: 'struct redisServer' has no member named 'tcp_backlog'
+                 server.tcp_backlog);
+                       ^
+server.c:2769:23: error: 'struct redisServer' has no member named 'bindaddr'
+                 server.bindaddr[j] ? server.bindaddr[j] : "*",
+                       ^
+server.c:2769:44: error: 'struct redisServer' has no member named 'bindaddr'
+                 server.bindaddr[j] ? server.bindaddr[j] : "*",
+                                            ^
+server.c:2770:29: error: 'struct redisServer' has no member named 'neterr'
+                 port, server.neterr);
+                             ^
+server.c: In function 'resetServerStats':
+server.c:2789:11: error: 'struct redisServer' has no member named 'stat_numcommands'
+     server.stat_numcommands = 0;
+           ^
+server.c:2790:11: error: 'struct redisServer' has no member named 'stat_numconnections'
+     server.stat_numconnections = 0;
+           ^
+server.c:2791:11: error: 'struct redisServer' has no member named 'stat_expiredkeys'
+     server.stat_expiredkeys = 0;
+           ^
+server.c:2792:11: error: 'struct redisServer' has no member named 'stat_expired_stale_perc'
+     server.stat_expired_stale_perc = 0;
+           ^
+server.c:2793:11: error: 'struct redisServer' has no member named 'stat_expired_time_cap_reached_count'
+     server.stat_expired_time_cap_reached_count = 0;
+           ^
+server.c:2794:11: error: 'struct redisServer' has no member named 'stat_expire_cycle_time_used'
+     server.stat_expire_cycle_time_used = 0;
+           ^
+server.c:2795:11: error: 'struct redisServer' has no member named 'stat_evictedkeys'
+     server.stat_evictedkeys = 0;
+           ^
+server.c:2796:11: error: 'struct redisServer' has no member named 'stat_keyspace_misses'
+     server.stat_keyspace_misses = 0;
+           ^
+server.c:2797:11: error: 'struct redisServer' has no member named 'stat_keyspace_hits'
+     server.stat_keyspace_hits = 0;
+           ^
+server.c:2798:11: error: 'struct redisServer' has no member named 'stat_active_defrag_hits'
+     server.stat_active_defrag_hits = 0;
+           ^
+server.c:2799:11: error: 'struct redisServer' has no member named 'stat_active_defrag_misses'
+     server.stat_active_defrag_misses = 0;
+           ^
+server.c:2800:11: error: 'struct redisServer' has no member named 'stat_active_defrag_key_hits'
+     server.stat_active_defrag_key_hits = 0;
+           ^
+server.c:2801:11: error: 'struct redisServer' has no member named 'stat_active_defrag_key_misses'
+     server.stat_active_defrag_key_misses = 0;
+           ^
+server.c:2802:11: error: 'struct redisServer' has no member named 'stat_active_defrag_scanned'
+     server.stat_active_defrag_scanned = 0;
+           ^
+server.c:2803:11: error: 'struct redisServer' has no member named 'stat_fork_time'
+     server.stat_fork_time = 0;
+           ^
+server.c:2804:11: error: 'struct redisServer' has no member named 'stat_fork_rate'
+     server.stat_fork_rate = 0;
+           ^
+server.c:2805:11: error: 'struct redisServer' has no member named 'stat_rejected_conn'
+     server.stat_rejected_conn = 0;
+           ^
+server.c:2806:11: error: 'struct redisServer' has no member named 'stat_sync_full'
+     server.stat_sync_full = 0;
+           ^
+server.c:2807:11: error: 'struct redisServer' has no member named 'stat_sync_partial_ok'
+     server.stat_sync_partial_ok = 0;
+           ^
+server.c:2808:11: error: 'struct redisServer' has no member named 'stat_sync_partial_err'
+     server.stat_sync_partial_err = 0;
+           ^
+server.c:2809:11: error: 'struct redisServer' has no member named 'stat_io_reads_processed'
+     server.stat_io_reads_processed = 0;
+           ^
+server.c:2810:11: error: 'struct redisServer' has no member named 'stat_total_reads_processed'
+     server.stat_total_reads_processed = 0;
+           ^
+server.c:2811:11: error: 'struct redisServer' has no member named 'stat_io_writes_processed'
+     server.stat_io_writes_processed = 0;
+           ^
+server.c:2812:11: error: 'struct redisServer' has no member named 'stat_total_writes_processed'
+     server.stat_total_writes_processed = 0;
+           ^
+server.c:2814:15: error: 'struct redisServer' has no member named 'inst_metric'
+         server.inst_metric[j].idx = 0;
+               ^
+server.c:2815:15: error: 'struct redisServer' has no member named 'inst_metric'
+         server.inst_metric[j].last_sample_time = mstime();
+               ^
+server.c:2816:15: error: 'struct redisServer' has no member named 'inst_metric'
+         server.inst_metric[j].last_sample_count = 0;
+               ^
+server.c:2817:22: error: 'struct redisServer' has no member named 'inst_metric'
+         memset(server.inst_metric[j].samples,0,
+                      ^
+server.c:2818:26: error: 'struct redisServer' has no member named 'inst_metric'
+             sizeof(server.inst_metric[j].samples));
+                          ^
+server.c:2820:11: error: 'struct redisServer' has no member named 'stat_net_input_bytes'
+     server.stat_net_input_bytes = 0;
+           ^
+server.c:2821:11: error: 'struct redisServer' has no member named 'stat_net_output_bytes'
+     server.stat_net_output_bytes = 0;
+           ^
+server.c:2822:11: error: 'struct redisServer' has no member named 'stat_unexpected_error_replies'
+     server.stat_unexpected_error_replies = 0;
+           ^
+server.c:2823:11: error: 'struct redisServer' has no member named 'aof_delayed_fsync'
+     server.aof_delayed_fsync = 0;
+           ^
+server.c: In function 'initServer':
+server.c:2842:15: error: 'struct redisServer' has no member named 'syslog_enabled'
+     if (server.syslog_enabled) {
+               ^
+server.c:2843:23: error: 'struct redisServer' has no member named 'syslog_ident'
+         openlog(server.syslog_ident, LOG_PID | LOG_NDELAY | LOG_NOWAIT,
+                       ^
+server.c:2844:19: error: 'struct redisServer' has no member named 'syslog_facility'
+             server.syslog_facility);
+                   ^
+server.c:2848:11: error: 'struct redisServer' has no member named 'aof_state'
+     server.aof_state = server.aof_enabled ? AOF_ON : AOF_OFF;
+           ^
+server.c:2848:30: error: 'struct redisServer' has no member named 'aof_enabled'
+     server.aof_state = server.aof_enabled ? AOF_ON : AOF_OFF;
+                              ^
+server.c:2853:11: error: 'struct redisServer' has no member named 'current_client'
+     server.current_client = NULL;
+           ^
+server.c:2854:11: error: 'struct redisServer' has no member named 'fixed_time_expire'
+     server.fixed_time_expire = 0;
+           ^
+server.c:2855:11: error: 'struct redisServer' has no member named 'clients'
+     server.clients = listCreate();
+           ^
+server.c:2856:11: error: 'struct redisServer' has no member named 'clients_index'
+     server.clients_index = raxNew();
+           ^
+server.c:2857:11: error: 'struct redisServer' has no member named 'clients_to_close'
+     server.clients_to_close = listCreate();
+           ^
+server.c:2858:11: error: 'struct redisServer' has no member named 'slaves'
+     server.slaves = listCreate();
+           ^
+server.c:2859:11: error: 'struct redisServer' has no member named 'monitors'
+     server.monitors = listCreate();
+           ^
+server.c:2860:11: error: 'struct redisServer' has no member named 'clients_pending_write'
+     server.clients_pending_write = listCreate();
+           ^
+server.c:2861:11: error: 'struct redisServer' has no member named 'clients_pending_read'
+     server.clients_pending_read = listCreate();
+           ^
+server.c:2862:11: error: 'struct redisServer' has no member named 'clients_timeout_table'
+     server.clients_timeout_table = raxNew();
+           ^
+server.c:2863:11: error: 'struct redisServer' has no member named 'slaveseldb'
+     server.slaveseldb = -1; /* Force to emit the first SELECT command. */
+           ^
+server.c:2864:11: error: 'struct redisServer' has no member named 'unblocked_clients'
+     server.unblocked_clients = listCreate();
+           ^
+server.c:2865:11: error: 'struct redisServer' has no member named 'ready_keys'
+     server.ready_keys = listCreate();
+           ^
+server.c:2866:11: error: 'struct redisServer' has no member named 'clients_waiting_acks'
+     server.clients_waiting_acks = listCreate();
+           ^
+server.c:2867:11: error: 'struct redisServer' has no member named 'get_ack_from_slaves'
+     server.get_ack_from_slaves = 0;
+           ^
+server.c:2868:11: error: 'struct redisServer' has no member named 'clients_paused'
+     server.clients_paused = 0;
+           ^
+server.c:2869:11: error: 'struct redisServer' has no member named 'events_processed_while_blocked'
+     server.events_processed_while_blocked = 0;
+           ^
+server.c:2870:11: error: 'struct redisServer' has no member named 'system_memory_size'
+     server.system_memory_size = zmalloc_get_memory_size();
+           ^
+server.c:2872:16: error: 'struct redisServer' has no member named 'tls_port'
+     if ((server.tls_port || server.tls_replication || server.tls_cluster)
+                ^
+server.c:2872:35: error: 'struct redisServer' has no member named 'tls_replication'
+     if ((server.tls_port || server.tls_replication || server.tls_cluster)
+                                   ^
+server.c:2872:61: error: 'struct redisServer' has no member named 'tls_cluster'
+     if ((server.tls_port || server.tls_replication || server.tls_cluster)
+                                                             ^
+server.c:2873:40: error: 'struct redisServer' has no member named 'tls_ctx_config'
+                 && tlsConfigure(&server.tls_ctx_config) == C_ERR) {
+                                        ^
+server.c:2880:41: error: 'struct redisServer' has no member named 'maxclients'
+     server.el = aeCreateEventLoop(server.maxclients+CONFIG_FDSET_INCR);
+                                         ^
+server.c:2887:47: error: 'struct redisServer' has no member named 'dbnum'
+     server.db = zmalloc(sizeof(redisDb)*server.dbnum);
+                                               ^
+server.c:2890:15: error: 'struct redisServer' has no member named 'port'
+     if (server.port != 0 &&
+               ^
+server.c:2891:28: error: 'struct redisServer' has no member named 'port'
+         listenToPort(server.port,server.ipfd,&server.ipfd_count) == C_ERR)
+                            ^
+server.c:2891:40: error: 'struct redisServer' has no member named 'ipfd'
+         listenToPort(server.port,server.ipfd,&server.ipfd_count) == C_ERR)
+                                        ^
+server.c:2891:53: error: 'struct redisServer' has no member named 'ipfd_count'
+         listenToPort(server.port,server.ipfd,&server.ipfd_count) == C_ERR)
+                                                     ^
+server.c:2893:15: error: 'struct redisServer' has no member named 'tls_port'
+     if (server.tls_port != 0 &&
+               ^
+server.c:2894:28: error: 'struct redisServer' has no member named 'tls_port'
+         listenToPort(server.tls_port,server.tlsfd,&server.tlsfd_count) == C_ERR)
+                            ^
+server.c:2894:44: error: 'struct redisServer' has no member named 'tlsfd'
+         listenToPort(server.tls_port,server.tlsfd,&server.tlsfd_count) == C_ERR)
+                                            ^
+server.c:2894:58: error: 'struct redisServer' has no member named 'tlsfd_count'
+         listenToPort(server.tls_port,server.tlsfd,&server.tlsfd_count) == C_ERR)
+                                                          ^
+server.c:2898:15: error: 'struct redisServer' has no member named 'unixsocket'
+     if (server.unixsocket != NULL) {
+               ^
+server.c:2899:22: error: 'struct redisServer' has no member named 'unixsocket'
+         unlink(server.unixsocket); /* don't care if this fails */
+                      ^
+server.c:2900:15: error: 'struct redisServer' has no member named 'sofd'
+         server.sofd = anetUnixServer(server.neterr,server.unixsocket,
+               ^
+server.c:2900:44: error: 'struct redisServer' has no member named 'neterr'
+         server.sofd = anetUnixServer(server.neterr,server.unixsocket,
+                                            ^
+server.c:2900:58: error: 'struct redisServer' has no member named 'unixsocket'
+         server.sofd = anetUnixServer(server.neterr,server.unixsocket,
+                                                          ^
+server.c:2901:19: error: 'struct redisServer' has no member named 'unixsocketperm'
+             server.unixsocketperm, server.tcp_backlog);
+                   ^
+server.c:2901:42: error: 'struct redisServer' has no member named 'tcp_backlog'
+             server.unixsocketperm, server.tcp_backlog);
+                                          ^
+server.c:2902:19: error: 'struct redisServer' has no member named 'sofd'
+         if (server.sofd == ANET_ERR) {
+                   ^
+server.c:2903:68: error: 'struct redisServer' has no member named 'neterr'
+             serverLog(LL_WARNING, "Opening Unix socket: %s", server.neterr);
+                                                                    ^
+server.c:2906:33: error: 'struct redisServer' has no member named 'sofd'
+         anetNonBlock(NULL,server.sofd);
+                                 ^
+server.c:2910:15: error: 'struct redisServer' has no member named 'ipfd_count'
+     if (server.ipfd_count == 0 && server.tlsfd_count == 0 && server.sofd < 0) {
+               ^
+server.c:2910:41: error: 'struct redisServer' has no member named 'tlsfd_count'
+     if (server.ipfd_count == 0 && server.tlsfd_count == 0 && server.sofd < 0) {
+                                         ^
+server.c:2910:68: error: 'struct redisServer' has no member named 'sofd'
+     if (server.ipfd_count == 0 && server.tlsfd_count == 0 && server.sofd < 0) {
+                                                                    ^
+server.c:2916:27: error: 'struct redisServer' has no member named 'dbnum'
+     for (j = 0; j < server.dbnum; j++) {
+                           ^
+server.c:2929:11: error: 'struct redisServer' has no member named 'pubsub_channels'
+     server.pubsub_channels = dictCreate(&keylistDictType,NULL);
+           ^
+server.c:2930:11: error: 'struct redisServer' has no member named 'pubsub_patterns'
+     server.pubsub_patterns = listCreate();
+           ^
+server.c:2931:11: error: 'struct redisServer' has no member named 'pubsub_patterns_dict'
+     server.pubsub_patterns_dict = dictCreate(&keylistDictType,NULL);
+           ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:2932:29: error: 'struct redisServer' has no member named 'pubsub_patterns'
+     listSetFreeMethod(server.pubsub_patterns,freePubsubPattern);
+                             ^
+adlist.h:65:34: note: in definition of macro 'listSetFreeMethod'
+ #define listSetFreeMethod(l,m) ((l)->free = (m))
+                                  ^
+server.c:2933:30: error: 'struct redisServer' has no member named 'pubsub_patterns'
+     listSetMatchMethod(server.pubsub_patterns,listMatchPubsubPattern);
+                              ^
+adlist.h:66:35: note: in definition of macro 'listSetMatchMethod'
+ #define listSetMatchMethod(l,m) ((l)->match = (m))
+                                   ^
+server.c:2934:11: error: 'struct redisServer' has no member named 'cronloops'
+     server.cronloops = 0;
+           ^
+server.c:2935:11: error: 'struct redisServer' has no member named 'rdb_child_pid'
+     server.rdb_child_pid = -1;
+           ^
+server.c:2936:11: error: 'struct redisServer' has no member named 'aof_child_pid'
+     server.aof_child_pid = -1;
+           ^
+server.c:2937:11: error: 'struct redisServer' has no member named 'module_child_pid'
+     server.module_child_pid = -1;
+           ^
+server.c:2938:11: error: 'struct redisServer' has no member named 'rdb_child_type'
+     server.rdb_child_type = RDB_CHILD_TYPE_NONE;
+           ^
+server.c:2939:11: error: 'struct redisServer' has no member named 'rdb_pipe_conns'
+     server.rdb_pipe_conns = NULL;
+           ^
+server.c:2940:11: error: 'struct redisServer' has no member named 'rdb_pipe_numconns'
+     server.rdb_pipe_numconns = 0;
+           ^
+server.c:2941:11: error: 'struct redisServer' has no member named 'rdb_pipe_numconns_writing'
+     server.rdb_pipe_numconns_writing = 0;
+           ^
+server.c:2942:11: error: 'struct redisServer' has no member named 'rdb_pipe_buff'
+     server.rdb_pipe_buff = NULL;
+           ^
+server.c:2943:11: error: 'struct redisServer' has no member named 'rdb_pipe_bufflen'
+     server.rdb_pipe_bufflen = 0;
+           ^
+server.c:2944:11: error: 'struct redisServer' has no member named 'rdb_bgsave_scheduled'
+     server.rdb_bgsave_scheduled = 0;
+           ^
+server.c:2945:11: error: 'struct redisServer' has no member named 'child_info_pipe'
+     server.child_info_pipe[0] = -1;
+           ^
+server.c:2946:11: error: 'struct redisServer' has no member named 'child_info_pipe'
+     server.child_info_pipe[1] = -1;
+           ^
+server.c:2947:11: error: 'struct redisServer' has no member named 'child_info_data'
+     server.child_info_data.magic = 0;
+           ^
+server.c:2949:11: error: 'struct redisServer' has no member named 'aof_buf'
+     server.aof_buf = sdsempty();
+           ^
+server.c:2950:11: error: 'struct redisServer' has no member named 'lastsave'
+     server.lastsave = time(NULL); /* At startup we consider the DB saved. */
+           ^
+server.c:2951:11: error: 'struct redisServer' has no member named 'lastbgsave_try'
+     server.lastbgsave_try = 0;    /* At startup we never tried to BGSAVE. */
+           ^
+server.c:2952:11: error: 'struct redisServer' has no member named 'rdb_save_time_last'
+     server.rdb_save_time_last = -1;
+           ^
+server.c:2953:11: error: 'struct redisServer' has no member named 'rdb_save_time_start'
+     server.rdb_save_time_start = -1;
+           ^
+server.c:2954:11: error: 'struct redisServer' has no member named 'dirty'
+     server.dirty = 0;
+           ^
+server.c:2957:11: error: 'struct redisServer' has no member named 'stat_starttime'
+     server.stat_starttime = time(NULL);
+           ^
+server.c:2958:11: error: 'struct redisServer' has no member named 'stat_peak_memory'
+     server.stat_peak_memory = 0;
+           ^
+server.c:2959:11: error: 'struct redisServer' has no member named 'stat_rdb_cow_bytes'
+     server.stat_rdb_cow_bytes = 0;
+           ^
+server.c:2960:11: error: 'struct redisServer' has no member named 'stat_aof_cow_bytes'
+     server.stat_aof_cow_bytes = 0;
+           ^
+server.c:2961:11: error: 'struct redisServer' has no member named 'stat_module_cow_bytes'
+     server.stat_module_cow_bytes = 0;
+           ^
+server.c:2963:15: error: 'struct redisServer' has no member named 'stat_clients_type_memory'
+         server.stat_clients_type_memory[j] = 0;
+               ^
+server.c:2964:11: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+     server.cron_malloc_stats.zmalloc_used = 0;
+           ^
+server.c:2965:11: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+     server.cron_malloc_stats.process_rss = 0;
+           ^
+server.c:2966:11: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+     server.cron_malloc_stats.allocator_allocated = 0;
+           ^
+server.c:2967:11: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+     server.cron_malloc_stats.allocator_active = 0;
+           ^
+server.c:2968:11: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+     server.cron_malloc_stats.allocator_resident = 0;
+           ^
+server.c:2969:11: error: 'struct redisServer' has no member named 'lastbgsave_status'
+     server.lastbgsave_status = C_OK;
+           ^
+server.c:2970:11: error: 'struct redisServer' has no member named 'aof_last_write_status'
+     server.aof_last_write_status = C_OK;
+           ^
+server.c:2971:11: error: 'struct redisServer' has no member named 'aof_last_write_errno'
+     server.aof_last_write_errno = 0;
+           ^
+server.c:2972:11: error: 'struct redisServer' has no member named 'repl_good_slaves_count'
+     server.repl_good_slaves_count = 0;
+           ^
+server.c:2984:27: error: 'struct redisServer' has no member named 'ipfd_count'
+     for (j = 0; j < server.ipfd_count; j++) {
+                           ^
+server.c:2985:48: error: 'struct redisServer' has no member named 'ipfd'
+         if (aeCreateFileEvent(server.el, server.ipfd[j], AE_READABLE,
+                                                ^
+server.c:2992:27: error: 'struct redisServer' has no member named 'tlsfd_count'
+     for (j = 0; j < server.tlsfd_count; j++) {
+                           ^
+server.c:2993:48: error: 'struct redisServer' has no member named 'tlsfd'
+         if (aeCreateFileEvent(server.el, server.tlsfd[j], AE_READABLE,
+                                                ^
+server.c:3000:15: error: 'struct redisServer' has no member named 'sofd'
+     if (server.sofd > 0 && aeCreateFileEvent(server.el,server.sofd,AE_READABLE,
+               ^
+server.c:3000:62: error: 'struct redisServer' has no member named 'sofd'
+     if (server.sofd > 0 && aeCreateFileEvent(server.el,server.sofd,AE_READABLE,
+                                                              ^
+server.c:3006:44: error: 'struct redisServer' has no member named 'module_blocked_pipe'
+     if (aeCreateFileEvent(server.el, server.module_blocked_pipe[0], AE_READABLE,
+                                            ^
+server.c:3019:15: error: 'struct redisServer' has no member named 'aof_state'
+     if (server.aof_state == AOF_ON) {
+               ^
+server.c:3020:15: error: 'struct redisServer' has no member named 'aof_fd'
+         server.aof_fd = open(server.aof_filename,
+               ^
+server.c:3020:36: error: 'struct redisServer' has no member named 'aof_filename'
+         server.aof_fd = open(server.aof_filename,
+                                    ^
+server.c:3022:19: error: 'struct redisServer' has no member named 'aof_fd'
+         if (server.aof_fd == -1) {
+                   ^
+server.c:3033:15: error: 'struct redisServer' has no member named 'arch_bits'
+     if (server.arch_bits == 32 && server.maxmemory == 0) {
+               ^
+server.c:3033:41: error: 'struct redisServer' has no member named 'maxmemory'
+     if (server.arch_bits == 32 && server.maxmemory == 0) {
+                                         ^
+server.c:3035:15: error: 'struct redisServer' has no member named 'maxmemory'
+         server.maxmemory = 3072LL*(1024*1024); /* 3 GB */
+               ^
+server.c:3036:15: error: 'struct redisServer' has no member named 'maxmemory_policy'
+         server.maxmemory_policy = MAXMEMORY_NO_EVICTION;
+               ^
+server.c:3039:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled) clusterInit();
+               ^
+server.c: In function 'InitServerLast':
+server.c:3054:34: error: 'struct redisServer' has no member named 'jemalloc_bg_thread'
+     set_jemalloc_bg_thread(server.jemalloc_bg_thread);
+                                  ^
+server.c:3055:11: error: 'struct redisServer' has no member named 'initial_memory_usage'
+     server.initial_memory_usage = zmalloc_used_memory();
+           ^
+server.c: In function 'propagate':
+server.c:3245:15: error: 'struct redisServer' has no member named 'aof_state'
+     if (server.aof_state != AOF_OFF && flags & PROPAGATE_AOF)
+               ^
+server.c:3248:37: error: 'struct redisServer' has no member named 'slaves'
+         replicationFeedSlaves(server.slaves,dbid,argv,argc);
+                                     ^
+server.c: In function 'alsoPropagate':
+server.c:3269:15: error: 'struct redisServer' has no member named 'loading'
+     if (server.loading) return; /* No propagation during loading. */
+               ^
+server.c:3276:31: error: 'struct redisServer' has no member named 'also_propagate'
+     redisOpArrayAppend(&server.also_propagate,cmd,dbid,argvcopy,argc,target);
+                               ^
+server.c: In function 'call':
+server.c:3347:11: error: 'struct redisServer' has no member named 'fixed_time_expire'
+     server.fixed_time_expire++;
+           ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:3351:26: error: 'struct redisServer' has no member named 'monitors'
+     if (listLength(server.monitors) &&
+                          ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:3352:16: error: 'struct redisServer' has no member named 'loading'
+         !server.loading &&
+                ^
+server.c:3355:41: error: 'struct redisServer' has no member named 'monitors'
+         replicationFeedMonitors(c,server.monitors,c->db->id,c->argv,c->argc);
+                                         ^
+server.c:3361:46: error: 'struct redisServer' has no member named 'also_propagate'
+     redisOpArray prev_also_propagate = server.also_propagate;
+                                              ^
+server.c:3362:29: error: 'struct redisServer' has no member named 'also_propagate'
+     redisOpArrayInit(&server.also_propagate);
+                             ^
+server.c:3365:19: error: 'struct redisServer' has no member named 'dirty'
+     dirty = server.dirty;
+                   ^
+server.c:3367:19: error: 'struct redisServer' has no member named 'ustime'
+     start = server.ustime;
+                   ^
+server.c:3370:19: error: 'struct redisServer' has no member named 'dirty'
+     dirty = server.dirty-dirty;
+                   ^
+server.c:3382:15: error: 'struct redisServer' has no member named 'loading'
+     if (server.loading && c->flags & CLIENT_LUA)
+               ^
+server.c:3388:40: error: 'struct redisServer' has no member named 'lua_caller'
+     if (c->flags & CLIENT_LUA && server.lua_caller) {
+                                        ^
+server.c:3390:19: error: 'struct redisServer' has no member named 'lua_caller'
+             server.lua_caller->flags |= CLIENT_FORCE_REPL;
+                   ^
+server.c:3392:19: error: 'struct redisServer' has no member named 'lua_caller'
+             server.lua_caller->flags |= CLIENT_FORCE_AOF;
+                   ^
+In file included from server.h:70:0,
+                 from server.c:30:
+latency.h:85:15: error: 'struct redisServer' has no member named 'latency_monitor_threshold'
+     if (server.latency_monitor_threshold && \
+               ^
+server.c:3400:9: note: in expansion of macro 'latencyAddSampleIfNeeded'
+         latencyAddSampleIfNeeded(latency_event,duration/1000);
+         ^
+latency.h:86:24: error: 'struct redisServer' has no member named 'latency_monitor_threshold'
+         (var) >= server.latency_monitor_threshold) \
+                        ^
+server.c:3400:9: note: in expansion of macro 'latencyAddSampleIfNeeded'
+         latencyAddSampleIfNeeded(latency_event,duration/1000);
+         ^
+server.c:3453:15: error: 'struct redisServer' has no member named 'also_propagate'
+     if (server.also_propagate.numops) {
+               ^
+server.c:3465:23: error: 'struct redisServer' has no member named 'also_propagate'
+             if (server.also_propagate.numops > 1 &&
+                       ^
+server.c:3474:35: error: 'struct redisServer' has no member named 'also_propagate'
+             for (j = 0; j < server.also_propagate.numops; j++) {
+                                   ^
+server.c:3475:30: error: 'struct redisServer' has no member named 'also_propagate'
+                 rop = &server.also_propagate.ops[j];
+                              ^
+server.c:3488:33: error: 'struct redisServer' has no member named 'also_propagate'
+         redisOpArrayFree(&server.also_propagate);
+                                 ^
+server.c:3490:11: error: 'struct redisServer' has no member named 'also_propagate'
+     server.also_propagate = prev_also_propagate;
+           ^
+server.c:3495:58: error: 'struct redisServer' has no member named 'lua_caller'
+         client *caller = (c->flags & CLIENT_LUA && server.lua_caller) ?
+                                                          ^
+server.c:3496:35: error: 'struct redisServer' has no member named 'lua_caller'
+                             server.lua_caller : c;
+                                   ^
+server.c:3504:11: error: 'struct redisServer' has no member named 'fixed_time_expire'
+     server.fixed_time_expire--;
+           ^
+server.c:3505:11: error: 'struct redisServer' has no member named 'stat_numcommands'
+     server.stat_numcommands++;
+           ^
+server.c:3510:30: error: 'struct redisServer' has no member named 'stat_peak_memory'
+     if (zmalloc_used > server.stat_peak_memory)
+                              ^
+server.c:3511:15: error: 'struct redisServer' has no member named 'stat_peak_memory'
+         server.stat_peak_memory = zmalloc_used;
+               ^
+server.c: In function 'processCommand':
+server.c:3630:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled &&
+               ^
+server.c:3633:17: error: 'struct redisServer' has no member named 'lua_caller'
+           server.lua_caller->flags & CLIENT_MASTER) &&
+                 ^
+server.c:3641:37: error: 'struct redisServer' has no member named 'cluster'
+         if (n == NULL || n != server.cluster->myself) {
+                                     ^
+server.c:3658:15: error: 'struct redisServer' has no member named 'maxmemory'
+     if (server.maxmemory && !server.lua_timedout) {
+               ^
+server.c:3658:36: error: 'struct redisServer' has no member named 'lua_timedout'
+     if (server.maxmemory && !server.lua_timedout) {
+                                    ^
+server.c:3662:19: error: 'struct redisServer' has no member named 'current_client'
+         if (server.current_client == NULL) return C_ERR;
+                   ^
+server.c:3685:19: error: 'struct redisServer' has no member named 'lua_oom'
+             server.lua_oom = out_of_memory;
+                   ^
+server.c:3691:15: error: 'struct redisServer' has no member named 'tracking_clients'
+     if (server.tracking_clients) trackingLimitUsedSlots();
+               ^
+server.c:3697:15: error: 'struct redisServer' has no member named 'masterhost'
+         server.masterhost == NULL &&
+               ^
+server.c:3705:32: error: 'struct redisServer' has no member named 'aof_last_write_errno'
+                 strerror(server.aof_last_write_errno));
+                                ^
+server.c:3711:15: error: 'struct redisServer' has no member named 'masterhost'
+     if (server.masterhost == NULL &&
+               ^
+server.c:3712:15: error: 'struct redisServer' has no member named 'repl_min_slaves_to_write'
+         server.repl_min_slaves_to_write &&
+               ^
+server.c:3713:15: error: 'struct redisServer' has no member named 'repl_min_slaves_max_lag'
+         server.repl_min_slaves_max_lag &&
+               ^
+server.c:3715:15: error: 'struct redisServer' has no member named 'repl_good_slaves_count'
+         server.repl_good_slaves_count < server.repl_min_slaves_to_write)
+               ^
+server.c:3715:47: error: 'struct redisServer' has no member named 'repl_min_slaves_to_write'
+         server.repl_good_slaves_count < server.repl_min_slaves_to_write)
+                                               ^
+server.c:3723:15: error: 'struct redisServer' has no member named 'masterhost'
+     if (server.masterhost && server.repl_slave_ro &&
+               ^
+server.c:3723:36: error: 'struct redisServer' has no member named 'repl_slave_ro'
+     if (server.masterhost && server.repl_slave_ro &&
+                                    ^
+server.c:3749:15: error: 'struct redisServer' has no member named 'masterhost'
+     if (server.masterhost && server.repl_state != REPL_STATE_CONNECTED &&
+               ^
+server.c:3749:36: error: 'struct redisServer' has no member named 'repl_state'
+     if (server.masterhost && server.repl_state != REPL_STATE_CONNECTED &&
+                                    ^
+server.c:3750:15: error: 'struct redisServer' has no member named 'repl_serve_stale_data'
+         server.repl_serve_stale_data == 0 &&
+               ^
+server.c:3759:15: error: 'struct redisServer' has no member named 'loading'
+     if (server.loading && is_denyloading_command) {
+               ^
+server.c:3770:15: error: 'struct redisServer' has no member named 'lua_timedout'
+     if (server.lua_timedout &&
+               ^
+server.c:3798:25: error: 'struct redisServer' has no member named 'master_repl_offset'
+         c->woff = server.master_repl_offset;
+                         ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:3799:30: error: 'struct redisServer' has no member named 'ready_keys'
+         if (listLength(server.ready_keys))
+                              ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c: In function 'closeListeningSockets':
+server.c:3812:27: error: 'struct redisServer' has no member named 'ipfd_count'
+     for (j = 0; j < server.ipfd_count; j++) close(server.ipfd[j]);
+                           ^
+server.c:3812:57: error: 'struct redisServer' has no member named 'ipfd'
+     for (j = 0; j < server.ipfd_count; j++) close(server.ipfd[j]);
+                                                         ^
+server.c:3813:27: error: 'struct redisServer' has no member named 'tlsfd_count'
+     for (j = 0; j < server.tlsfd_count; j++) close(server.tlsfd[j]);
+                           ^
+server.c:3813:58: error: 'struct redisServer' has no member named 'tlsfd'
+     for (j = 0; j < server.tlsfd_count; j++) close(server.tlsfd[j]);
+                                                          ^
+server.c:3814:15: error: 'struct redisServer' has no member named 'sofd'
+     if (server.sofd != -1) close(server.sofd);
+               ^
+server.c:3814:40: error: 'struct redisServer' has no member named 'sofd'
+     if (server.sofd != -1) close(server.sofd);
+                                        ^
+server.c:3815:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled)
+               ^
+server.c:3816:31: error: 'struct redisServer' has no member named 'cfd_count'
+         for (j = 0; j < server.cfd_count; j++) close(server.cfd[j]);
+                               ^
+server.c:3816:60: error: 'struct redisServer' has no member named 'cfd'
+         for (j = 0; j < server.cfd_count; j++) close(server.cfd[j]);
+                                                            ^
+server.c:3817:37: error: 'struct redisServer' has no member named 'unixsocket'
+     if (unlink_unix_socket && server.unixsocket) {
+                                     ^
+server.c:3819:22: error: 'struct redisServer' has no member named 'unixsocket'
+         unlink(server.unixsocket); /* don't care if this fails */
+                      ^
+server.c: In function 'prepareForShutdown':
+server.c:3830:15: error: 'struct redisServer' has no member named 'loading'
+     if (server.loading || server.sentinel_mode)
+               ^
+server.c:3830:33: error: 'struct redisServer' has no member named 'sentinel_mode'
+     if (server.loading || server.sentinel_mode)
+                                 ^
+server.c:3837:15: error: 'struct redisServer' has no member named 'supervised_mode'
+     if (server.supervised_mode == SUPERVISED_SYSTEMD)
+               ^
+server.c:3846:15: error: 'struct redisServer' has no member named 'rdb_child_pid'
+     if (server.rdb_child_pid != -1) {
+               ^
+server.c:3856:15: error: 'struct redisServer' has no member named 'module_child_pid'
+     if (server.module_child_pid != -1) {
+               ^
+server.c:3858:40: error: 'struct redisServer' has no member named 'module_child_pid'
+         TerminateModuleForkChild(server.module_child_pid,0);
+                                        ^
+server.c:3861:15: error: 'struct redisServer' has no member named 'aof_state'
+     if (server.aof_state != AOF_OFF) {
+               ^
+server.c:3864:19: error: 'struct redisServer' has no member named 'aof_child_pid'
+         if (server.aof_child_pid != -1) {
+                   ^
+server.c:3867:23: error: 'struct redisServer' has no member named 'aof_state'
+             if (server.aof_state == AOF_WAIT_REWRITE) {
+                       ^
+server.c:3878:27: error: 'struct redisServer' has no member named 'aof_fd'
+         redis_fsync(server.aof_fd);
+                           ^
+server.c:3882:16: error: 'struct redisServer' has no member named 'saveparamslen'
+     if ((server.saveparamslen > 0 && !nosave) || save) {
+                ^
+server.c:3884:19: error: 'struct redisServer' has no member named 'supervised_mode'
+         if (server.supervised_mode == SUPERVISED_SYSTEMD)
+                   ^
+server.c:3889:27: error: 'struct redisServer' has no member named 'rdb_filename'
+         if (rdbSave(server.rdb_filename,rsiptr) != C_OK) {
+                           ^
+server.c:3896:23: error: 'struct redisServer' has no member named 'supervised_mode'
+             if (server.supervised_mode == SUPERVISED_SYSTEMD)
+                       ^
+server.c:3906:15: error: 'struct redisServer' has no member named 'daemonize'
+     if (server.daemonize || server.pidfile) {
+               ^
+server.c:3906:35: error: 'struct redisServer' has no member named 'pidfile'
+     if (server.daemonize || server.pidfile) {
+                                   ^
+server.c:3908:22: error: 'struct redisServer' has no member named 'pidfile'
+         unlink(server.pidfile);
+                      ^
+server.c:3918:15: error: 'struct redisServer' has no member named 'sentinel_mode'
+         server.sentinel_mode ? "Sentinel" : "Redis");
+               ^
+server.c: In function 'writeCommandsDeniedByDiskError':
+server.c:3936:15: error: 'struct redisServer' has no member named 'stop_writes_on_bgsave_err'
+     if (server.stop_writes_on_bgsave_err &&
+               ^
+server.c:3937:15: error: 'struct redisServer' has no member named 'saveparamslen'
+         server.saveparamslen > 0 &&
+               ^
+server.c:3938:15: error: 'struct redisServer' has no member named 'lastbgsave_status'
+         server.lastbgsave_status == C_ERR)
+               ^
+server.c:3941:22: error: 'struct redisServer' has no member named 'aof_state'
+     } else if (server.aof_state != AOF_OFF &&
+                      ^
+server.c:3942:22: error: 'struct redisServer' has no member named 'aof_last_write_status'
+                server.aof_last_write_status == C_ERR)
+                      ^
+server.c: In function 'genRedisInfoString':
+server.c:4135:27: error: 'struct redisServer' has no member named 'unixtime'
+     time_t uptime = server.unixtime-server.stat_starttime;
+                           ^
+server.c:4135:43: error: 'struct redisServer' has no member named 'stat_starttime'
+     time_t uptime = server.unixtime-server.stat_starttime;
+                                           ^
+server.c:4157:19: error: 'struct redisServer' has no member named 'cluster_enabled'
+         if (server.cluster_enabled) mode = "cluster";
+                   ^
+server.c:4158:24: error: 'struct redisServer' has no member named 'sentinel_mode'
+         else if (server.sentinel_mode) mode = "sentinel";
+                        ^
+server.c:4198:19: error: 'struct redisServer' has no member named 'arch_bits'
+             server.arch_bits,
+                   ^
+server.c:4207:19: error: 'struct redisServer' has no member named 'runid'
+             server.runid,
+                   ^
+server.c:4208:19: error: 'struct redisServer' has no member named 'port'
+             server.port ? server.port : server.tls_port,
+                   ^
+server.c:4208:33: error: 'struct redisServer' has no member named 'port'
+             server.port ? server.port : server.tls_port,
+                                 ^
+server.c:4208:47: error: 'struct redisServer' has no member named 'tls_port'
+             server.port ? server.port : server.tls_port,
+                                               ^
+server.c:4213:19: error: 'struct redisServer' has no member named 'lruclock'
+             server.lruclock,
+                   ^
+server.c:4216:19: error: 'struct redisServer' has no member named 'io_threads_active'
+             server.io_threads_active);
+                   ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:4232:30: error: 'struct redisServer' has no member named 'clients'
+             listLength(server.clients)-listLength(server.slaves),
+                              ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:4232:57: error: 'struct redisServer' has no member named 'slaves'
+             listLength(server.clients)-listLength(server.slaves),
+                                                         ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:4234:19: error: 'struct redisServer' has no member named 'blocked_clients'
+             server.blocked_clients,
+                   ^
+server.c:4235:19: error: 'struct redisServer' has no member named 'tracking_clients'
+             server.tracking_clients,
+                   ^
+server.c:4236:48: error: 'struct redisServer' has no member named 'clients_timeout_table'
+             (unsigned long long) raxSize(server.clients_timeout_table));
+                                                ^
+server.c:4249:41: error: 'struct redisServer' has no member named 'system_memory_size'
+         size_t total_system_mem = server.system_memory_size;
+                                         ^
+server.c:4251:38: error: 'struct redisServer' has no member named 'lua'
+         long long memory_lua = server.lua ? (long long)lua_gc(server.lua,LUA_GCCOUNT,0)*1024 : 0;
+                                      ^
+server.c:4251:69: error: 'struct redisServer' has no member named 'lua'
+         long long memory_lua = server.lua ? (long long)lua_gc(server.lua,LUA_GCCOUNT,0)*1024 : 0;
+                                                                     ^
+server.c:4258:34: error: 'struct redisServer' has no member named 'stat_peak_memory'
+         if (zmalloc_used > server.stat_peak_memory)
+                                  ^
+server.c:4259:19: error: 'struct redisServer' has no member named 'stat_peak_memory'
+             server.stat_peak_memory = zmalloc_used;
+                   ^
+server.c:4262:38: error: 'struct redisServer' has no member named 'stat_peak_memory'
+         bytesToHuman(peak_hmem,server.stat_peak_memory);
+                                      ^
+server.c:4266:49: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+         bytesToHuman(used_memory_rss_hmem,server.cron_malloc_stats.process_rss);
+                                                 ^
+server.c:4267:43: error: 'struct redisServer' has no member named 'maxmemory'
+         bytesToHuman(maxmemory_hmem,server.maxmemory);
+                                           ^
+server.c:4314:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.process_rss,
+                   ^
+server.c:4316:19: error: 'struct redisServer' has no member named 'stat_peak_memory'
+             server.stat_peak_memory,
+                   ^
+server.c:4323:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_allocated,
+                   ^
+server.c:4324:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_active,
+                   ^
+server.c:4325:19: error: 'struct redisServer' has no member named 'cron_malloc_stats'
+             server.cron_malloc_stats.allocator_resident,
+                   ^
+In file included from server.h:62:0,
+                 from server.c:30:
+server.c:4332:28: error: 'struct redisServer' has no member named 'lua_scripts'
+             dictSize(server.lua_scripts),
+                            ^
+dict.h:147:23: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                       ^
+server.c:4332:28: error: 'struct redisServer' has no member named 'lua_scripts'
+             dictSize(server.lua_scripts),
+                            ^
+dict.h:147:39: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                                       ^
+server.c:4333:19: error: 'struct redisServer' has no member named 'maxmemory'
+             server.maxmemory,
+                   ^
+server.c:4353:19: error: 'struct redisServer' has no member named 'active_defrag_running'
+             server.active_defrag_running,
+                   ^
+server.c:4382:19: error: 'struct redisServer' has no member named 'loading'
+             server.loading,
+                   ^
+server.c:4383:19: error: 'struct redisServer' has no member named 'dirty'
+             server.dirty,
+                   ^
+server.c:4384:19: error: 'struct redisServer' has no member named 'rdb_child_pid'
+             server.rdb_child_pid != -1,
+                   ^
+server.c:4385:29: error: 'struct redisServer' has no member named 'lastsave'
+             (intmax_t)server.lastsave,
+                             ^
+server.c:4386:20: error: 'struct redisServer' has no member named 'lastbgsave_status'
+             (server.lastbgsave_status == C_OK) ? "ok" : "err",
+                    ^
+server.c:4387:29: error: 'struct redisServer' has no member named 'rdb_save_time_last'
+             (intmax_t)server.rdb_save_time_last,
+                             ^
+server.c:4388:31: error: 'struct redisServer' has no member named 'rdb_child_pid'
+             (intmax_t)((server.rdb_child_pid == -1) ?
+                               ^
+server.c:4389:39: error: 'struct redisServer' has no member named 'rdb_save_time_start'
+                 -1 : time(NULL)-server.rdb_save_time_start),
+                                       ^
+server.c:4390:19: error: 'struct redisServer' has no member named 'stat_rdb_cow_bytes'
+             server.stat_rdb_cow_bytes,
+                   ^
+server.c:4391:19: error: 'struct redisServer' has no member named 'aof_state'
+             server.aof_state != AOF_OFF,
+                   ^
+server.c:4392:19: error: 'struct redisServer' has no member named 'aof_child_pid'
+             server.aof_child_pid != -1,
+                   ^
+server.c:4393:19: error: 'struct redisServer' has no member named 'aof_rewrite_scheduled'
+             server.aof_rewrite_scheduled,
+                   ^
+server.c:4394:29: error: 'struct redisServer' has no member named 'aof_rewrite_time_last'
+             (intmax_t)server.aof_rewrite_time_last,
+                             ^
+server.c:4395:31: error: 'struct redisServer' has no member named 'aof_child_pid'
+             (intmax_t)((server.aof_child_pid == -1) ?
+                               ^
+server.c:4396:39: error: 'struct redisServer' has no member named 'aof_rewrite_time_start'
+                 -1 : time(NULL)-server.aof_rewrite_time_start),
+                                       ^
+server.c:4397:20: error: 'struct redisServer' has no member named 'aof_lastbgrewrite_status'
+             (server.aof_lastbgrewrite_status == C_OK) ? "ok" : "err",
+                    ^
+server.c:4398:20: error: 'struct redisServer' has no member named 'aof_last_write_status'
+             (server.aof_last_write_status == C_OK) ? "ok" : "err",
+                    ^
+server.c:4399:19: error: 'struct redisServer' has no member named 'stat_aof_cow_bytes'
+             server.stat_aof_cow_bytes,
+                   ^
+server.c:4400:19: error: 'struct redisServer' has no member named 'module_child_pid'
+             server.module_child_pid != -1,
+                   ^
+server.c:4401:19: error: 'struct redisServer' has no member named 'stat_module_cow_bytes'
+             server.stat_module_cow_bytes);
+                   ^
+server.c:4403:19: error: 'struct redisServer' has no member named 'aof_enabled'
+         if (server.aof_enabled) {
+                   ^
+server.c:4412:35: error: 'struct redisServer' has no member named 'aof_current_size'
+                 (long long) server.aof_current_size,
+                                   ^
+server.c:4413:35: error: 'struct redisServer' has no member named 'aof_rewrite_base_size'
+                 (long long) server.aof_rewrite_base_size,
+                                   ^
+server.c:4414:23: error: 'struct redisServer' has no member named 'aof_rewrite_scheduled'
+                 server.aof_rewrite_scheduled,
+                       ^
+server.c:4415:30: error: 'struct redisServer' has no member named 'aof_buf'
+                 sdslen(server.aof_buf),
+                              ^
+server.c:4418:23: error: 'struct redisServer' has no member named 'aof_delayed_fsync'
+                 server.aof_delayed_fsync);
+                       ^
+server.c:4421:19: error: 'struct redisServer' has no member named 'loading'
+         if (server.loading) {
+                   ^
+server.c:4424:43: error: 'struct redisServer' has no member named 'loading_total_bytes'
+             off_t remaining_bytes = server.loading_total_bytes-
+                                           ^
+server.c:4425:43: error: 'struct redisServer' has no member named 'loading_loaded_bytes'
+                                     server.loading_loaded_bytes;
+                                           ^
+server.c:4427:35: error: 'struct redisServer' has no member named 'loading_loaded_bytes'
+             perc = ((double)server.loading_loaded_bytes /
+                                   ^
+server.c:4428:27: error: 'struct redisServer' has no member named 'loading_total_bytes'
+                    (server.loading_total_bytes+1)) * 100;
+                           ^
+server.c:4430:40: error: 'struct redisServer' has no member named 'loading_start_time'
+             elapsed = time(NULL)-server.loading_start_time;
+                                        ^
+server.c:4435:56: error: 'struct redisServer' has no member named 'loading_loaded_bytes'
+                 eta = (elapsed*remaining_bytes)/(server.loading_loaded_bytes+1);
+                                                        ^
+server.c:4444:34: error: 'struct redisServer' has no member named 'loading_start_time'
+                 (intmax_t) server.loading_start_time,
+                                  ^
+server.c:4445:44: error: 'struct redisServer' has no member named 'loading_total_bytes'
+                 (unsigned long long) server.loading_total_bytes,
+                                            ^
+server.c:4446:44: error: 'struct redisServer' has no member named 'loading_loaded_bytes'
+                 (unsigned long long) server.loading_loaded_bytes,
+                                            ^
+server.c:4493:19: error: 'struct redisServer' has no member named 'stat_numconnections'
+             server.stat_numconnections,
+                   ^
+server.c:4494:19: error: 'struct redisServer' has no member named 'stat_numcommands'
+             server.stat_numcommands,
+                   ^
+server.c:4496:19: error: 'struct redisServer' has no member named 'stat_net_input_bytes'
+             server.stat_net_input_bytes,
+                   ^
+server.c:4497:19: error: 'struct redisServer' has no member named 'stat_net_output_bytes'
+             server.stat_net_output_bytes,
+                   ^
+server.c:4500:19: error: 'struct redisServer' has no member named 'stat_rejected_conn'
+             server.stat_rejected_conn,
+                   ^
+server.c:4501:19: error: 'struct redisServer' has no member named 'stat_sync_full'
+             server.stat_sync_full,
+                   ^
+server.c:4502:19: error: 'struct redisServer' has no member named 'stat_sync_partial_ok'
+             server.stat_sync_partial_ok,
+                   ^
+server.c:4503:19: error: 'struct redisServer' has no member named 'stat_sync_partial_err'
+             server.stat_sync_partial_err,
+                   ^
+server.c:4504:19: error: 'struct redisServer' has no member named 'stat_expiredkeys'
+             server.stat_expiredkeys,
+                   ^
+server.c:4505:19: error: 'struct redisServer' has no member named 'stat_expired_stale_perc'
+             server.stat_expired_stale_perc*100,
+                   ^
+server.c:4506:19: error: 'struct redisServer' has no member named 'stat_expired_time_cap_reached_count'
+             server.stat_expired_time_cap_reached_count,
+                   ^
+server.c:4507:19: error: 'struct redisServer' has no member named 'stat_expire_cycle_time_used'
+             server.stat_expire_cycle_time_used/1000,
+                   ^
+server.c:4508:19: error: 'struct redisServer' has no member named 'stat_evictedkeys'
+             server.stat_evictedkeys,
+                   ^
+server.c:4509:19: error: 'struct redisServer' has no member named 'stat_keyspace_hits'
+             server.stat_keyspace_hits,
+                   ^
+server.c:4510:19: error: 'struct redisServer' has no member named 'stat_keyspace_misses'
+             server.stat_keyspace_misses,
+                   ^
+In file included from server.h:62:0,
+                 from server.c:30:
+server.c:4511:28: error: 'struct redisServer' has no member named 'pubsub_channels'
+             dictSize(server.pubsub_channels),
+                            ^
+dict.h:147:23: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                       ^
+server.c:4511:28: error: 'struct redisServer' has no member named 'pubsub_channels'
+             dictSize(server.pubsub_channels),
+                            ^
+dict.h:147:39: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                                       ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:4512:30: error: 'struct redisServer' has no member named 'pubsub_patterns'
+             listLength(server.pubsub_patterns),
+                              ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:4513:19: error: 'struct redisServer' has no member named 'stat_fork_time'
+             server.stat_fork_time,
+                   ^
+In file included from server.h:62:0,
+                 from server.c:30:
+server.c:4514:28: error: 'struct redisServer' has no member named 'migrate_cached_sockets'
+             dictSize(server.migrate_cached_sockets),
+                            ^
+dict.h:147:23: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                       ^
+server.c:4514:28: error: 'struct redisServer' has no member named 'migrate_cached_sockets'
+             dictSize(server.migrate_cached_sockets),
+                            ^
+dict.h:147:39: note: in definition of macro 'dictSize'
+ #define dictSize(d) ((d)->ht[0].used+(d)->ht[1].used)
+                                       ^
+server.c:4516:19: error: 'struct redisServer' has no member named 'stat_active_defrag_hits'
+             server.stat_active_defrag_hits,
+                   ^
+server.c:4517:19: error: 'struct redisServer' has no member named 'stat_active_defrag_misses'
+             server.stat_active_defrag_misses,
+                   ^
+server.c:4518:19: error: 'struct redisServer' has no member named 'stat_active_defrag_key_hits'
+             server.stat_active_defrag_key_hits,
+                   ^
+server.c:4519:19: error: 'struct redisServer' has no member named 'stat_active_defrag_key_misses'
+             server.stat_active_defrag_key_misses,
+                   ^
+server.c:4523:19: error: 'struct redisServer' has no member named 'stat_unexpected_error_replies'
+             server.stat_unexpected_error_replies,
+                   ^
+server.c:4524:19: error: 'struct redisServer' has no member named 'stat_total_reads_processed'
+             server.stat_total_reads_processed,
+                   ^
+server.c:4525:19: error: 'struct redisServer' has no member named 'stat_total_writes_processed'
+             server.stat_total_writes_processed,
+                   ^
+server.c:4526:19: error: 'struct redisServer' has no member named 'stat_io_reads_processed'
+             server.stat_io_reads_processed,
+                   ^
+server.c:4527:19: error: 'struct redisServer' has no member named 'stat_io_writes_processed'
+             server.stat_io_writes_processed);
+                   ^
+server.c:4536:19: error: 'struct redisServer' has no member named 'masterhost'
+             server.masterhost == NULL ? "master" : "slave");
+                   ^
+server.c:4537:19: error: 'struct redisServer' has no member named 'masterhost'
+         if (server.masterhost) {
+                   ^
+server.c:4540:23: error: 'struct redisServer' has no member named 'master'
+             if (server.master)
+                       ^
+server.c:4541:43: error: 'struct redisServer' has no member named 'master'
+                 slave_repl_offset = server.master->reploff;
+                                           ^
+server.c:4542:28: error: 'struct redisServer' has no member named 'cached_master'
+             else if (server.cached_master)
+                            ^
+server.c:4543:43: error: 'struct redisServer' has no member named 'cached_master'
+                 slave_repl_offset = server.cached_master->reploff;
+                                           ^
+server.c:4552:24: error: 'struct redisServer' has no member named 'masterhost'
+                 ,server.masterhost,
+                        ^
+server.c:4553:23: error: 'struct redisServer' has no member named 'masterport'
+                 server.masterport,
+                       ^
+server.c:4554:24: error: 'struct redisServer' has no member named 'repl_state'
+                 (server.repl_state == REPL_STATE_CONNECTED) ?
+                        ^
+server.c:4556:23: error: 'struct redisServer' has no member named 'master'
+                 server.master ?
+                       ^
+server.c:4557:30: error: 'struct redisServer' has no member named 'unixtime'
+                 ((int)(server.unixtime-server.master->lastinteraction)) : -1,
+                              ^
+server.c:4557:46: error: 'struct redisServer' has no member named 'master'
+                 ((int)(server.unixtime-server.master->lastinteraction)) : -1,
+                                              ^
+server.c:4558:23: error: 'struct redisServer' has no member named 'repl_state'
+                 server.repl_state == REPL_STATE_TRANSFER,
+                       ^
+server.c:4562:23: error: 'struct redisServer' has no member named 'repl_state'
+             if (server.repl_state == REPL_STATE_TRANSFER) {
+                       ^
+server.c:4567:32: error: 'struct redisServer' has no member named 'repl_transfer_size'
+                         (server.repl_transfer_size - server.repl_transfer_read),
+                                ^
+server.c:4567:60: error: 'struct redisServer' has no member named 'repl_transfer_read'
+                         (server.repl_transfer_size - server.repl_transfer_read),
+                                                            ^
+server.c:4568:33: error: 'struct redisServer' has no member named 'unixtime'
+                     (int)(server.unixtime-server.repl_transfer_lastio)
+                                 ^
+server.c:4568:49: error: 'struct redisServer' has no member named 'repl_transfer_lastio'
+                     (int)(server.unixtime-server.repl_transfer_lastio)
+                                                 ^
+server.c:4572:23: error: 'struct redisServer' has no member named 'repl_state'
+             if (server.repl_state != REPL_STATE_CONNECTED) {
+                       ^
+server.c:4575:38: error: 'struct redisServer' has no member named 'unixtime'
+                     (intmax_t)(server.unixtime-server.repl_down_since));
+                                      ^
+server.c:4575:54: error: 'struct redisServer' has no member named 'repl_down_since'
+                     (intmax_t)(server.unixtime-server.repl_down_since));
+                                                      ^
+server.c:4580:23: error: 'struct redisServer' has no member named 'slave_priority'
+                 server.slave_priority,
+                       ^
+server.c:4581:23: error: 'struct redisServer' has no member named 'repl_slave_ro'
+                 server.repl_slave_ro);
+                       ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:4586:30: error: 'struct redisServer' has no member named 'slaves'
+             listLength(server.slaves));
+                              ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:4590:19: error: 'struct redisServer' has no member named 'repl_min_slaves_to_write'
+         if (server.repl_min_slaves_to_write &&
+                   ^
+server.c:4591:19: error: 'struct redisServer' has no member named 'repl_min_slaves_max_lag'
+             server.repl_min_slaves_max_lag) {
+                   ^
+server.c:4594:23: error: 'struct redisServer' has no member named 'repl_good_slaves_count'
+                 server.repl_good_slaves_count);
+                       ^
+In file included from server.h:63:0,
+                 from server.c:30:
+server.c:4597:30: error: 'struct redisServer' has no member named 'slaves'
+         if (listLength(server.slaves)) {
+                              ^
+adlist.h:57:25: note: in definition of macro 'listLength'
+ #define listLength(l) ((l)->len)
+                         ^
+server.c:4602:30: error: 'struct redisServer' has no member named 'slaves'
+             listRewind(server.slaves,&li);
+                              ^
+server.c:4648:19: error: 'struct redisServer' has no member named 'replid'
+             server.replid,
+                   ^
+server.c:4649:19: error: 'struct redisServer' has no member named 'replid2'
+             server.replid2,
+                   ^
+server.c:4650:19: error: 'struct redisServer' has no member named 'master_repl_offset'
+             server.master_repl_offset,
+                   ^
+server.c:4651:19: error: 'struct redisServer' has no member named 'second_replid_offset'
+             server.second_replid_offset,
+                   ^
+server.c:4652:19: error: 'struct redisServer' has no member named 'repl_backlog'
+             server.repl_backlog != NULL,
+                   ^
+server.c:4653:19: error: 'struct redisServer' has no member named 'repl_backlog_size'
+             server.repl_backlog_size,
+                   ^
+server.c:4654:19: error: 'struct redisServer' has no member named 'repl_backlog_off'
+             server.repl_backlog_off,
+                   ^
+server.c:4655:19: error: 'struct redisServer' has no member named 'repl_backlog_histlen'
+             server.repl_backlog_histlen);
+                   ^
+server.c:4706:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+         server.cluster_enabled);
+               ^
+server.c:4713:31: error: 'struct redisServer' has no member named 'dbnum'
+         for (j = 0; j < server.dbnum; j++) {
+                               ^
+server.c: In function 'monitorCommand':
+server.c:4756:27: error: 'struct redisServer' has no member named 'monitors'
+     listAddNodeTail(server.monitors,c);
+                           ^
+server.c: In function 'checkIgnoreWarning':
+server.c:4764:36: error: 'struct redisServer' has no member named 'ignore_warnings'
+     sds *argv = sdssplitargs(server.ignore_warnings, &argc);
+                                    ^
+server.c: In function 'createPidFile':
+server.c:4912:16: error: 'struct redisServer' has no member named 'pidfile'
+     if (!server.pidfile) server.pidfile = zstrdup(CONFIG_DEFAULT_PID_FILE);
+                ^
+server.c:4912:32: error: 'struct redisServer' has no member named 'pidfile'
+     if (!server.pidfile) server.pidfile = zstrdup(CONFIG_DEFAULT_PID_FILE);
+                                ^
+server.c:4915:28: error: 'struct redisServer' has no member named 'pidfile'
+     FILE *fp = fopen(server.pidfile,"w");
+                            ^
+server.c: In function 'redisAsciiArt':
+server.c:4972:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled) mode = "cluster";
+               ^
+server.c:4973:20: error: 'struct redisServer' has no member named 'sentinel_mode'
+     else if (server.sentinel_mode) mode = "sentinel";
+                    ^
+server.c:4979:30: error: 'struct redisServer' has no member named 'syslog_enabled'
+     int show_logo = ((!server.syslog_enabled &&
+                              ^
+server.c:4980:29: error: 'struct redisServer' has no member named 'logfile'
+                       server.logfile[0] == '\0' &&
+                             ^
+server.c:4982:28: error: 'struct redisServer' has no member named 'always_show_logo'
+                      server.always_show_logo);
+                            ^
+server.c:4987:25: error: 'struct redisServer' has no member named 'port'
+             mode, server.port ? server.port : server.tls_port
+                         ^
+server.c:4987:39: error: 'struct redisServer' has no member named 'port'
+             mode, server.port ? server.port : server.tls_port
+                                       ^
+server.c:4987:53: error: 'struct redisServer' has no member named 'tls_port'
+             mode, server.port ? server.port : server.tls_port
+                                                     ^
+server.c:4995:25: error: 'struct redisServer' has no member named 'port'
+             mode, server.port ? server.port : server.tls_port,
+                         ^
+server.c:4995:39: error: 'struct redisServer' has no member named 'port'
+             mode, server.port ? server.port : server.tls_port,
+                                       ^
+server.c:4995:53: error: 'struct redisServer' has no member named 'tls_port'
+             mode, server.port ? server.port : server.tls_port,
+                                                     ^
+server.c: In function 'sigShutdownHandler':
+server.c:5021:15: error: 'struct redisServer' has no member named 'shutdown_asap'
+     if (server.shutdown_asap && sig == SIGINT) {
+               ^
+server.c:5025:22: error: 'struct redisServer' has no member named 'loading'
+     } else if (server.loading) {
+                      ^
+server.c:5031:11: error: 'struct redisServer' has no member named 'shutdown_asap'
+     server.shutdown_asap = 1;
+           ^
+server.c: In function 'closeClildUnusedResourceAfterFork':
+server.c:5086:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled && server.cluster_config_file_lock_fd != -1)
+               ^
+server.c:5086:41: error: 'struct redisServer' has no member named 'cluster_config_file_lock_fd'
+     if (server.cluster_enabled && server.cluster_config_file_lock_fd != -1)
+                                         ^
+server.c:5087:21: error: 'struct redisServer' has no member named 'cluster_config_file_lock_fd'
+         close(server.cluster_config_file_lock_fd);  /* don't care if this fails */
+                     ^
+server.c:5091:17: error: 'struct redisServer' has no member named 'pidfile'
+     zfree(server.pidfile);
+                 ^
+server.c:5092:11: error: 'struct redisServer' has no member named 'pidfile'
+     server.pidfile = NULL;
+           ^
+server.c: In function 'redisFork':
+server.c:5107:15: error: 'struct redisServer' has no member named 'stat_fork_time'
+         server.stat_fork_time = ustime()-start;
+               ^
+server.c:5108:15: error: 'struct redisServer' has no member named 'stat_fork_rate'
+         server.stat_fork_rate = (double) zmalloc_used_memory() * 1000000 / server.stat_fork_time / (1024*1024*1024); /* GB per second. */
+               ^
+server.c:5108:82: error: 'struct redisServer' has no member named 'stat_fork_time'
+         server.stat_fork_rate = (double) zmalloc_used_memory() * 1000000 / server.stat_fork_time / (1024*1024*1024); /* GB per second. */
+                                                                                  ^
+In file included from server.h:70:0,
+                 from server.c:30:
+latency.h:85:15: error: 'struct redisServer' has no member named 'latency_monitor_threshold'
+     if (server.latency_monitor_threshold && \
+               ^
+server.c:5109:9: note: in expansion of macro 'latencyAddSampleIfNeeded'
+         latencyAddSampleIfNeeded("fork",server.stat_fork_time/1000);
+         ^
+server.c:5109:47: error: 'struct redisServer' has no member named 'stat_fork_time'
+         latencyAddSampleIfNeeded("fork",server.stat_fork_time/1000);
+                                               ^
+latency.h:86:10: note: in definition of macro 'latencyAddSampleIfNeeded'
+         (var) >= server.latency_monitor_threshold) \
+          ^
+latency.h:86:24: error: 'struct redisServer' has no member named 'latency_monitor_threshold'
+         (var) >= server.latency_monitor_threshold) \
+                        ^
+server.c:5109:9: note: in expansion of macro 'latencyAddSampleIfNeeded'
+         latencyAddSampleIfNeeded("fork",server.stat_fork_time/1000);
+         ^
+server.c:5109:47: error: 'struct redisServer' has no member named 'stat_fork_time'
+         latencyAddSampleIfNeeded("fork",server.stat_fork_time/1000);
+                                               ^
+latency.h:87:37: note: in definition of macro 'latencyAddSampleIfNeeded'
+           latencyAddSample((event),(var));
+                                     ^
+server.c: In function 'sendChildCOWInfo':
+server.c:5126:11: error: 'struct redisServer' has no member named 'child_info_data'
+     server.child_info_data.cow_size = private_dirty;
+           ^
+server.c: In function 'loadDataFromDisk':
+server.c:5146:15: error: 'struct redisServer' has no member named 'aof_state'
+     if (server.aof_state == AOF_ON) {
+               ^
+server.c:5147:38: error: 'struct redisServer' has no member named 'aof_filename'
+         if (loadAppendOnlyFile(server.aof_filename) == C_OK)
+                                      ^
+server.c:5152:27: error: 'struct redisServer' has no member named 'rdb_filename'
+         if (rdbLoad(server.rdb_filename,&rsi,RDBFLAGS_NONE) == C_OK) {
+                           ^
+server.c:5157:24: error: 'struct redisServer' has no member named 'masterhost'
+             if ((server.masterhost ||
+                        ^
+server.c:5158:24: error: 'struct redisServer' has no member named 'cluster_enabled'
+                 (server.cluster_enabled &&
+                        ^
+In file included from server.c:31:0:
+server.c:5159:35: error: 'struct redisServer' has no member named 'cluster'
+                 nodeIsSlave(server.cluster->myself))) &&
+                                   ^
+cluster.h:61:26: note: in definition of macro 'nodeIsSlave'
+ #define nodeIsSlave(n) ((n)->flags & CLUSTER_NODE_SLAVE)
+                          ^
+server.c:5167:30: error: 'struct redisServer' has no member named 'replid'
+                 memcpy(server.replid,rsi.repl_id,sizeof(server.replid));
+                              ^
+server.c:5167:63: error: 'struct redisServer' has no member named 'replid'
+                 memcpy(server.replid,rsi.repl_id,sizeof(server.replid));
+                                                               ^
+server.c:5168:23: error: 'struct redisServer' has no member named 'master_repl_offset'
+                 server.master_repl_offset = rsi.repl_offset;
+                       ^
+server.c:5173:32: error: 'struct redisServer' has no member named 'cached_master'
+                 selectDb(server.cached_master,rsi.repl_stream_db);
+                                ^
+server.c: In function 'redisSetProcTitle':
+server.c:5192:15: error: 'struct redisServer' has no member named 'cluster_enabled'
+     if (server.cluster_enabled) server_mode = " [cluster]";
+               ^
+server.c:5193:20: error: 'struct redisServer' has no member named 'sentinel_mode'
+     else if (server.sentinel_mode) server_mode = " [sentinel]";
+                    ^
+server.c:5197:15: error: 'struct redisServer' has no member named 'bindaddr_count'
+         server.bindaddr_count ? server.bindaddr[0] : "*",
+               ^
+server.c:5197:39: error: 'struct redisServer' has no member named 'bindaddr'
+         server.bindaddr_count ? server.bindaddr[0] : "*",
+                                       ^
+server.c:5198:15: error: 'struct redisServer' has no member named 'port'
+         server.port ? server.port : server.tls_port,
+               ^
+server.c:5198:29: error: 'struct redisServer' has no member named 'port'
+         server.port ? server.port : server.tls_port,
+                             ^
+server.c:5198:43: error: 'struct redisServer' has no member named 'tls_port'
+         server.port ? server.port : server.tls_port,
+                                           ^
+server.c: In function 'redisIsSupervised':
+server.c:5255:19: error: 'struct redisServer' has no member named 'supervised_mode'
+             server.supervised_mode = SUPERVISED_SYSTEMD;
+                   ^
+server.c: In function 'iAmMaster':
+server.c:5272:21: error: 'struct redisServer' has no member named 'cluster_enabled'
+     return ((!server.cluster_enabled && server.masterhost == NULL) ||
+                     ^
+server.c:5272:47: error: 'struct redisServer' has no member named 'masterhost'
+     return ((!server.cluster_enabled && server.masterhost == NULL) ||
+                                               ^
+server.c:5273:20: error: 'struct redisServer' has no member named 'cluster_enabled'
+             (server.cluster_enabled && nodeIsMaster(server.cluster->myself)));
+                    ^
+In file included from server.c:31:0:
+server.c:5273:59: error: 'struct redisServer' has no member named 'cluster'
+             (server.cluster_enabled && nodeIsMaster(server.cluster->myself)));
+                                                           ^
+cluster.h:60:27: note: in definition of macro 'nodeIsMaster'
+ #define nodeIsMaster(n) ((n)->flags & CLUSTER_NODE_MASTER)
+                           ^
+server.c: In function 'main':
+server.c:5320:11: error: 'struct redisServer' has no member named 'sentinel_mode'
+     server.sentinel_mode = checkForSentinelMode(argc,argv);
+           ^
+server.c:5337:15: error: 'struct redisServer' has no member named 'sentinel_mode'
+     if (server.sentinel_mode) {
+               ^
+server.c:5404:19: error: 'struct redisServer' has no member named 'sentinel_mode'
+         if (server.sentinel_mode && configfile && *configfile == '-') {
+                   ^
+server.c:5416:11: error: 'struct redisServer' has no member named 'supervised'
+     server.supervised = redisIsSupervised(server.supervised_mode);
+           ^
+server.c:5416:49: error: 'struct redisServer' has no member named 'supervised_mode'
+     server.supervised = redisIsSupervised(server.supervised_mode);
+                                                 ^
+server.c:5417:28: error: 'struct redisServer' has no member named 'daemonize'
+     int background = server.daemonize && !server.supervised;
+                            ^
+server.c:5417:49: error: 'struct redisServer' has no member named 'supervised'
+     int background = server.daemonize && !server.supervised;
+                                                 ^
+server.c:5430:168: error: 'struct redisServer' has no member named 'sentinel_mode'
+         serverLog(LL_WARNING, "Warning: no config file specified, using the default config. In order to specify a config file use %s /path/to/%s.conf", argv[0], server.sentinel_mode ? "sentinel" : "redis");
+                                                                                                                                                                        ^
+server.c:5437:29: error: 'struct redisServer' has no member named 'pidfile'
+     if (background || server.pidfile) createPidFile();
+                             ^
+server.c:5442:16: error: 'struct redisServer' has no member named 'sentinel_mode'
+     if (!server.sentinel_mode) {
+                ^
+server.c:5461:19: error: 'struct redisServer' has no member named 'cluster_enabled'
+         if (server.cluster_enabled) {
+                   ^
+server.c:5469:19: error: 'struct redisServer' has no member named 'ipfd_count'
+         if (server.ipfd_count > 0 || server.tlsfd_count > 0)
+                   ^
+server.c:5469:44: error: 'struct redisServer' has no member named 'tlsfd_count'
+         if (server.ipfd_count > 0 || server.tlsfd_count > 0)
+                                            ^
+server.c:5471:19: error: 'struct redisServer' has no member named 'sofd'
+         if (server.sofd > 0)
+                   ^
+server.c:5472:94: error: 'struct redisServer' has no member named 'unixsocket'
+             serverLog(LL_NOTICE,"The server is now ready to accept connections at %s", server.unixsocket);
+                                                                                              ^
+server.c:5473:19: error: 'struct redisServer' has no member named 'supervised_mode'
+         if (server.supervised_mode == SUPERVISED_SYSTEMD) {
+                   ^
+server.c:5474:24: error: 'struct redisServer' has no member named 'masterhost'
+             if (!server.masterhost) {
+                        ^
+server.c:5484:19: error: 'struct redisServer' has no member named 'supervised_mode'
+         if (server.supervised_mode == SUPERVISED_SYSTEMD) {
+                   ^
+server.c:5491:15: error: 'struct redisServer' has no member named 'maxmemory'
+     if (server.maxmemory > 0 && server.maxmemory < 1024*1024) {
+               ^
+server.c:5491:39: error: 'struct redisServer' has no member named 'maxmemory'
+     if (server.maxmemory > 0 && server.maxmemory < 1024*1024) {
+                                       ^
+server.c:5492:176: error: 'struct redisServer' has no member named 'maxmemory'
+         serverLog(LL_WARNING,"WARNING: You specified a maxmemory value that is less than 1MB (current value is %llu bytes). Are you sure this is what you really want?", server.maxmemory);
+                                                                                                                                                                                ^
+server.c:5495:31: error: 'struct redisServer' has no member named 'server_cpulist'
+     redisSetCpuAffinity(server.server_cpulist);
+                               ^
+server.c: In function 'hasActiveChildProcess':
+server.c:1482:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+server.c: In function 'allPersistenceDisabled':
+server.c:1488:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+server.c: In function 'writeCommandsDeniedByDiskError':
+server.c:3948:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+server.c: In function 'iAmMaster':
+server.c:5274:1: warning: control reaches end of non-void function [-Wreturn-type]
+ }
+ ^
+make[1]: *** [server.o] Error 1
+make[1]: Leaving directory `/root/alx-backend/0x03-queuing_system_in_js/redis-6.0.10/src'
+make: *** [all] Error 2
